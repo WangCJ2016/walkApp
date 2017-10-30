@@ -1,0 +1,43 @@
+.clubheader{
+  width: 100%;
+  height: px2rem(88);
+  background-color: $walkcolor;
+  position: fixed;
+  z-index: 9999;
+  .wrap{
+    width:100%;
+    text-align: center;
+    position: relative;
+    .club_title{
+        width:100%;
+        line-height:px2rem(88);
+        @include font-dpr(16px);
+        color:#fff;
+    }
+    .search{
+      background:url("../img/club/search.png") no-repeat left center;
+      background-size:100% px2rem(50);
+      width: px2rem(50);
+      height:100%;
+      position: absolute;
+      top: 0;
+      right: px2rem(30);
+    }
+  }
+}
+.club_wrap{
+  img{
+    width: px2rem(150);
+    height:px2rem(150);
+    position: fixed;
+    top:px2rem(350);
+    left:50%;
+    margin-left: px2rem(-75);
+  }
+  p{
+    @include font-dpr(13px);
+    color:#bdbdbd;
+    line-height:px2rem(1050);
+    text-align: center;
+  }
+}

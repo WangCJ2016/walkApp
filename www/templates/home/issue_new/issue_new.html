@@ -1,0 +1,46 @@
+<ion-view title='我要发'>
+    <ion-nav-buttons side="left">
+          <button class="button button-clear leftbtn" ng-click="goback()"></button>
+    </ion-nav-buttons>
+    <ion-content class='commonback'>
+        <div class='issue_new_wrap'>
+            <div id='maps'>
+              <div class='map_icon'></div>
+            </div>
+            <div class='label_cont'>
+              <p>
+                <label for="location"></label>
+                <!-- <input id='location' type="text" name="" value="" ng-blur='inputblur()' ng-value='address.data' ng-model="address.data"> -->
+                <span class="address" ng-click='openModal()'>{{address.data}}</span>
+              </p>
+              <div class='issue_newbtn' ng-click='nextclick()'>下一步</div>
+            </div>
+        </div>
+    </ion-content>
+    <script id="mymodal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar>
+          <div class="header">
+                <div class="wrap">
+                  <div class="buttons">
+                     <button class="button button-clear lbtn_style" ng-click="closeModal()"></button>
+                 </div>
+                    <div class="search_btn sitesearch">
+                        <input type="text" placeholder="输入要搜索的地址" id = 'tipinput' ng-change = 'searchsite()' ng-model='search.cont'>
+                        <!-- <span ng-click='closeModal()'></span> -->
+                    </div>
+                    <i></i>
+                </div>
+          </div>
+        </ion-header-bar>
+          <ion-content class='commonback'>
+            <ul class='mapsearch_list'>
+              <li ng-click='choosesite(searchList.location.lng,searchList.location.lat,searchList.address)' ng-repeat = 'searchList in searchList'>
+                <p>{{searchList.name}}</p>
+                <span>{{searchList.district}} {{searchList.address}}</span>
+              </li>
+            </ul>
+          </ion-content>
+        </ion-modal-view>
+    </script>
+</ion-view>

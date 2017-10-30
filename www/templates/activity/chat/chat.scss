@@ -1,0 +1,120 @@
+.chat_wrap{
+  padding-bottom: px2rem(242);
+  .active_discuss{
+    padding:px2rem(30) px2rem(30) px2rem(20) px2rem(30);
+    background: #fff;
+    margin-bottom:1px;
+    .discuss_person{
+      display: flex;
+      img{
+        width:px2rem(80);
+        height:px2rem(80);
+        border-radius: 50%;
+        margin-right: px2rem(20);
+      }
+      p{
+        span{
+          display: block;
+          @include font-dpr(14px);
+          line-height: px2rem(42);
+          color:#333;
+        }
+      }
+    }
+    .discuss_pic{
+      display: flex;
+      padding: px2rem(20) px2rem(60) px2rem(20) px2rem(100);
+      flex-wrap: wrap;
+      p{
+        width:px2rem(154);
+        height:px2rem(155);
+        margin-right: px2rem(10);
+        img{
+          width: 100%;
+          height:100%;
+          margin-top: px2rem(5);
+        }
+      }
+    }
+    .discuss_btn{
+      width:100%;
+      text-align: right;
+      span{
+        display: inline-block;
+        width:px2rem(40);
+        height:px2rem(35);
+        background: url('../img/active/activity_detail/a6.jpg');
+        background-size: 100% 100%;
+      }
+    }
+  }
+  .reply_discuss{
+    width: 100%;
+    padding:px2rem(30) px2rem(30) px2rem(20) px2rem(30);
+    background: #fff;
+    margin-bottom:1px;
+    display: flex;
+    img{
+      width:px2rem(60);
+      height: px2rem(60);
+      border-radius: 50%;
+      margin-right: px2rem(20);
+    }
+    p{
+      @include font-dpr(14px);
+      line-height: px2rem(60);
+      color:#333;
+    }
+  }
+}
+.discuss_bottom{
+  width: 100%;
+  height:px2rem(160);
+  display: block;
+}
+.bar.bar-assertive.bar-footer.discuss_bottom{
+  background: #fff;
+  .text_input{
+    width:100%;
+    padding:px2rem(20) px2rem(30);
+    p{
+      width:px2rem(690);
+      height: px2rem(50);
+      background: #ebebeb;
+      resize:none;
+      border-radius: px2rem(10);
+      padding:0 px2rem(20) 0 px2rem(10);
+      display: flex;
+      textarea{
+        width:px2rem(560);
+        height: px2rem(50);
+        resize:none;
+        border:none;
+        background: none;
+      }
+      span{
+        display: inline-block;
+        width:px2rem(100);
+        height: px2rem(40);
+        background: $walkcolor;
+        border-radius: px2rem(15);
+        margin-top: px2rem(5);
+        text-align: center;
+      }
+    }
+
+  }
+  .discuss_tool{
+    padding: 0 px2rem(100);
+    display: flex;
+    justify-content: space-between;
+    p{
+      width: px2rem(60);
+      height:px2rem(40);
+      img{
+        width:100%;
+        height:100%;
+      }
+    }
+  }
+}

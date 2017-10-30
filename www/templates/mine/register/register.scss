@@ -1,0 +1,51 @@
+.register_wrap{
+  .register_cont{
+    padding-top: px2rem(20);
+  }
+  p{
+    display: flex;
+    width:100%;
+    height:px2rem(88);
+    padding: 0 px2rem(40);
+    position: relative;
+    margin-bottom:1px;
+    background: #fff;
+    label{
+      line-height:px2rem(88);
+      @include font-dpr(16px);
+      color:#333;
+      margin-right: px2rem(10);
+    }
+    input{
+      height: 100%;
+      width: 70%;
+      background: none;
+      padding-left: px2rem(10);
+    }
+    span{
+      display: block;
+      position: absolute;
+      padding:0 px2rem(10);
+      height:px2rem(58);
+      background: $walkcolor;
+      border-radius: px2rem(20);
+      line-height:px2rem(58);
+      @include font-dpr(12px);
+      color:#fff;
+      text-align: center;
+      top:px2rem(15);
+      right:px2rem(40);
+    }
+  }
+  .register_btn{
+    width:px2rem(540);
+    height:px2rem(88);
+    background: $walkcolor;
+    border-radius: px2rem(40);
+    line-height:px2rem(88);
+    @include font-dpr(16px);
+    color:#fff;
+    text-align: center;
+    margin:px2rem(100) auto;
+  }
+}

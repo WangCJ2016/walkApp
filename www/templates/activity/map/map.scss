@@ -1,0 +1,43 @@
+.map_btn{
+  width:100%;
+  position: fixed;
+  bottom:px2rem(120);
+  z-index: 1000;
+  padding:0 px2rem(30);
+  .addr{
+    background: #fff;
+    width: px2rem(690);
+    position: relative;
+    padding:px2rem(10) px2rem(20);
+    p{
+      @include font-dpr(16px);
+      line-height: px2rem(46);
+    }
+    span{
+      @include font-dpr(15px);
+      line-height: px2rem(44);
+      color: #666;
+    }
+    .gps{
+      position: absolute;
+      top:px2rem(-45);
+      right: px2rem(30);
+      width: px2rem(90);
+      height:px2rem(90);
+      background: url('../img/active/gps.png');
+      background-size: 100% 100%;
+    }
+  }
+}
+.map_icon{
+  width:px2rem(40);
+  height:px2rem(50);
+  position: absolute;
+  top:50%;
+  left:50%;
+  background:url('../img/home/map1.png') no-repeat;
+  background-size: 100% 100%;
+  z-index: 100000;
+  margin-top: px2rem(-25);
+  margin-left: px2rem(-20);
+}

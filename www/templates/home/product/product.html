@@ -1,0 +1,102 @@
+<ion-view hide-nav-bar='true'>
+  <ion-header-bar>
+    <div class="header">
+          <div class="wrap">
+            <div class="buttons">
+               <button class="button button-clear lbtn_style" ng-click="goback()"></button>
+           </div>
+              <div class="search_btn search" ng-click='openModal()'>
+                  <div class='typetip'>
+                    <i ng-repeat = 'checkedList in checkedList'>{{checkedList.name}}</i>
+                  </div>
+                  <span></span>
+              </div>
+              <div class='map' ng-click="gomapList()">
+                  <!-- <span>发布</span> -->
+              </div>
+          </div>
+      </div>
+    </ion-header-bar>
+  <div class="bar bar-subheader procuct_showbtn">
+    <p class='showway' ng-click='way()' ng-class='{active:listshow}'>{{district}}<i></i></p>
+    <p class='showway' ng-click='show()' ng-class='{active:sortshow}'>智能排序<i></i></p>
+  </div>
+    <ion-content class='commonback'>
+        <div class='prod_wrap'>
+            <!-- <ul class='prod_list'>
+              <li ng-repeat='typedata in typedata'>
+                <img ng-src="http://www.byeyou.net/{{typedata.mainPicture}}" alt="" ng-click='typeclick(typedata.id)'>
+                <p>{{typedata.name}}</p>
+              </li>
+            </ul> -->
+            <div class="" id='map' style='width:0px;height:0px;'></div>
+            <div class='farm_showway'>
+            <ul class='sort_list' >
+              <li ng-repeat = 'listArr in listArr' ng-click='todetail(listArr.id,listArr.star)'>
+                <div class="list_pic">
+                  <img ng-src="{{listArr.pictures.split(',')[0]}}" alt="">
+                </div>
+                <div class="list_cont">
+                  <div class='list_title'>
+                    <h2>{{listArr.name}}</h2>
+                    <div rating-value="listArr.star" star class='star'></div>
+                  </div>
+                  <p><span>{{listArr.address}}</span><i>约{{listArr.scope}}</i></p>
+                  <p>{{listArr.remark}}</p>
+                  <div class='list_type'>
+                    <span ng-repeat='type in listArr.typeNames'>{{type}}</span>
+                  </div>
+                </div>
+              </li>
+              <p class='noDataTips' ng-show = 'listArr.length <= 0'>亲，暂无数据哦</p>
+            </ul>
+          </div>
+        </div>
+        <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+        <script id="modal.html" type="text/ng-template">
+          <div class="modal">
+            <ion-header-bar>
+              <div class="header">
+                    <div class="wrap">
+                      <div class="buttons">
+                         <!-- <button class="button button-clear lbtn_style" ng-click="goback()"></button> -->
+                     </div>
+                        <div class="search_btn sitesearch" ng-click="search()">
+                            <input type="text" placeholder="">
+                            <span ng-click='closeModal()'></span>
+                        </div>
+                        <i></i>
+                    </div>
+              </div>
+            </ion-header-bar>
+            <ion-content class=''>
+                <div class='site_wrap'>
+                  <h3>已选</h3>
+                  <ul class='type_label'>
+                    <li ng-repeat = 'checkedList in checkedList'>
+                      <label for="" class='active'>{{checkedList.name}}</label>
+                      <input type="checkbox" name="" value="">
+                    </li>
+                  </ul>
+                  <h3>可添加多个标签</h3>
+                  <ul class='type_label'>
+                    <li ng-repeat='site_type in site_type' ng-click='checkClick($index,site_type.checked,site_type.id)'>
+                      <label for=""  ng-class='{active:site_type.checked}'>{{site_type.name}}</label>
+                      <input type="checkbox" name="" value="">
+                    </li>
+                  </ul>
+                  <!-- <div class='compelte'>完成</div> -->
+                </div>
+            </ion-content>
+          </div>
+        </script>
+    </ion-content>
+    <div class='backdrop prod_backdrop visible' ng-class='{active:listshow}' ng-show = "listshow"></div>
+    <div class='backdrop prod_backdrop visible' ng-class='{active:sortshow}' ng-show = "sortshow"></div>
+    <ul class='prod_showcommon' ng-show = "sortshow" ng-class ='{slidedown:sortshow}'>
+      <li class='listcommon' ng-repeat='prodsort in prodsort' ng-click='sortclick($index)' ng-class ='{lis:j==$index}'>{{prodsort}}</li>
+    </ul>
+    <ul class='prod_showcommon' ng-show = "listshow" ng-class ='{slidedown:listshow}'>
+      <li class='listcommon' ng-repeat='areaArr in areaArr' ng-click='areaclick($index,areaArr.id,areaArr.name)' ng-class ='{lis:t==$index || regionId == areaArr.id}'>{{areaArr.name}}</li>
+    </ul>
+</ion-view>

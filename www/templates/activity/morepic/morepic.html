@@ -1,0 +1,33 @@
+<ion-view hide-nav-bar='true'>
+    <ion-header-bar>
+      <div class="buttons">
+         <button class="button button-clear lbtn_style" ng-click="goback()"></button>
+     </div>
+     <h1 class="title">更多图片</h1>
+     <div class="buttons">
+       <button class="button button-clear rbtn_style" ng-click='addpics()'>添加</button>
+     </div>
+    </ion-header-bar>
+    <ion-content class='commonback'>
+        <div class='chat_wrap'>
+          <div class='active_discuss' ng-repeat = 'picsdata in picsdata'>
+            <div class='discuss_person'>
+                <img ng-src="{{picsdata.userPhoto}}" alt="">
+                <p>
+                  <span>{{picsdata.userNickname}}</span>
+                  <span>{{picsdata.createTime}}</span>
+                </p>
+            </div>
+            <div class='discuss_pic'>
+              <p ng-repeat = 'pics in picsdata.pics'>
+                <img ng-src="{{pics}}" alt="" ng-click="big_pic_fun({{picsdata.pics}} , '{{pics}}')">
+              </p>
+            </div>
+          </div>
+        </div>
+        <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"> </ion-infinite-scroll>
+  </ion-content>
+        <div class="slide_pic  visible" ng-class='{active:big_pics.length>0}' ng-show="big_pics.length>0" ng-click="pic_hide()">
+            <img class="model_bigpic" ng-src="{{big_pic}}" on-swipe-left="next_pic(pic_index,big_pics)" on-swipe-right="prev_pic(pic_index,big_pics)">
+        </div>
+</ion-view>

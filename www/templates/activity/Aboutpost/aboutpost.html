@@ -1,0 +1,29 @@
+<ion-view title='相关帖子'>
+  <ion-nav-buttons side="left">
+        <button class="button button-clear leftbtn" ng-click="goback()"></button>
+    </ion-nav-buttons>
+    <ion-content class='commonback'>
+        <div class="active_wrap">
+          <!-- 帖子 -->
+          <ul class="active_content">
+            <li class="column" ng-repeat ='postlist in postlist' ng-click='topostdetail(postlist.id)'>
+              <div class="person">
+                <img ng-src="{{postlist.userPhoto}}" alt="">
+                <span>{{postlist.userNickname}}</span>
+              </div>
+              <p class='intro'>{{postlist.title}}</p>
+              <div class="pic">
+                <img ng-repeat='pic in postlist.pics' ng-src="{{pic}}" alt="">
+              </div>
+              <div class="about">
+                <p>来自于:<em>{{postlist.circleName}}</em></p>
+                <span>{{postlist.createTime}}</span>
+                <i>{{postlist.commentCount}}</i>
+                <i>{{postlist.viewCount}}</i>
+              </div>
+            </li>
+            <p class='noDataTips' ng-show = 'postlist.length <= 0'>亲，暂无数据哦</p>
+          </ul>
+        <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

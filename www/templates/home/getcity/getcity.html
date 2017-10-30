@@ -1,0 +1,26 @@
+<ion-view title='切换城市'>
+    <ion-nav-buttons side="left">
+        <button class="button button-clear leftbtn" ng-click="goback()"></button>
+    </ion-nav-buttons>
+    <ion-content class='commonback'>
+      <div class="choosecity_warp has-footer">
+        <div class="" id='map' style='width:0px;height:0px;'></div>
+         <div class="choosed" ng-click = 'choosenow()'>
+           <p>当前定位城市</p>
+           <div class='choosed_r'>{{poscity}}</div>
+         </div>
+         <div class="choosed"  ng-show='historyShow'>
+           <p>历史访问城市</p>
+           <div class='choosed_r'>
+             <span  ng-repeat="visitedCity in visitedCity" ng-click='choosehistory(visitedCity.name,visitedCity.id)'>{{visitedCity.name}}</span>
+           </div>
+         </div>
+         <ul>
+           <li ng-repeat='provinceArr in provinceArr' ng-click='goCity(provinceArr.id)'>
+             <p>{{provinceArr.name}}</p>
+             <span></span>
+           </li>
+         </ul>
+       </div>
+    </ion-content>
+</ion-view>

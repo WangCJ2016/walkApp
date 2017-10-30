@@ -1,0 +1,50 @@
+.changepwd_wrap{
+  .changepwd{
+    width: 100%;
+    padding-top: px2rem(20);
+    p{
+      width: 100%;
+      background: #fff;
+      padding: 0 px2rem(30);
+      height:px2rem(100);
+      margin-bottom: 1px;
+      display: inline-flex;
+      justify-content: space-between;
+      label{
+        @include font-dpr(16px);
+        line-height: px2rem(100);
+        color:#333;
+      }
+      input{
+        width:px2rem(508);
+        height:px2rem(60);
+        border:none;
+        margin-top:px2rem(20);
+        padding-left: px2rem(20);
+      }
+      select{
+        width:px2rem(508);
+        height:px2rem(60);
+        background: none;
+        text-indent:px2rem(20);
+        margin-top:px2rem(20);
+        appearance:none;
+        -moz-appearance:none;
+        -webkit-appearance:none;
+        background: url("../img/active/newactive/down.png") no-repeat px2rem(460) center;
+        background-size: px2rem(25) px2rem(15);
+      }
+    }
+  }
+  .changebtn{
+    width:px2rem(540);
+    height:px2rem(80);
+    background: $walkcolor;
+    margin:px2rem(280) auto;
+    border-radius: px2rem(40);
+    text-align: center;
+    color:#fff;
+    @include font-dpr(16px);
+    line-height: px2rem(80);
+  }
+}

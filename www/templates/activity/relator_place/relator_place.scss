@@ -1,0 +1,22 @@
+.relator_place_wrap{
+  .maps{
+    width: 100%;
+    height: px2rem(528);
+    background: cyan;
+  }
+  h3{
+    width: 100%;
+    height:px2rem(80);
+    background: #fff;
+    @include font-dpr(13px);
+    line-height: px2rem(80);
+    padding-left: px2rem(30);
+    color:#666;
+    margin:0;
+    margin-bottom: 1px;
+  }
+  .moresite{
+    height: px2rem(675);
+  }
+
+}

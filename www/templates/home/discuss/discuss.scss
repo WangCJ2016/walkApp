@@ -1,0 +1,48 @@
+.discuss_wrap{
+  width:100%;
+  margin-top: px2rem(60);
+  p{
+    @include font-dpr(16px);
+    line-height: px2rem(60);
+    color:#333;
+    font-family: 'MicrosoftYaHei';
+    text-align: center;
+    margin-bottom: px2rem(20);
+  }
+  textarea{
+    width:100%;
+    height:px2rem(485);
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    resize:none;
+    margin-top: px2rem(30);
+    padding:px2rem(20) px2rem(30);
+  }
+  .star{
+    //text-align: left !important;
+  }
+  .rating {
+      color: #ccc;
+      margin: 0;
+      padding: 0;
+  }
+  ul.rating {
+      display: inline-block;
+  }
+  .rating li {
+      list-style-type: none;
+      display: inline-block;
+      text-align: center;
+      font-weight: bold;
+      width: px2rem(70);
+      height:px2rem(70);
+      background: url('../img/home/star.png');
+      background-size: 100% 100%;
+      margin-right: px2rem(10);
+  }
+  .rating .filled {
+      //color: #fa952f;
+      background: url('../img/home/star2.png');
+      background-size: 100% 100%;
+  }
+}

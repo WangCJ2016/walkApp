@@ -1,0 +1,54 @@
+<ion-view hide-nav-bar='true'>
+    <ion-header-bar>
+      <div class="buttons">
+         <button class="button button-clear lbtn_style" ng-click="goback()"></button>
+     </div>
+     <h1 class="title">留言板</h1>
+     <div class="buttons">
+       <button class="button button-clear rbtn_style" ng-if='detailshow' ng-click='godetail()'>详情</button>
+     </div>
+    </ion-header-bar>
+    <ion-content class='commonback'>
+        <div class='chat_wrap'>
+            <ul>
+              <li ng-repeat = 'clubdiscuss in clubdiscuss'>
+                <div class='active_discuss'>
+                  <div class='discuss_person'>
+                      <img ng-src="{{clubdiscuss.user.photo}}" alt="">
+                      <p>
+                        <span>{{clubdiscuss.user.nickname||clubdiscuss.user.userName}}</span>
+                        <span>{{clubdiscuss.content}}</span>
+                      </p>
+                  </div>
+                  <div class='discuss_pic'>
+                    <p ng-repeat = 'image in clubdiscuss.images'>
+                      <img ng-src="{{image}}" alt="" ng-click="big_pic_fun({{clubdiscuss.images}} , '{{image}}')">
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+        </div>
+        <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+    <div class="slide_pic backdrop visible" ng-class='{active:big_pics.length>0}' ng-show="big_pics.length>0" ng-click="pic_hide()">
+        <img class="model_bigpic" ng-src="{{big_pic}}" on-swipe-left="next_pic(pic_index,big_pics)" on-swipe-right="prev_pic(pic_index,big_pics)">
+    </div>
+    <ion-footer-bar align-title="" class="bar-assertive discuss_bottom">
+      <div class='text_input'>
+        <p>
+          <textarea name="name" ng-model='discussdata.content'>
+          </textarea>
+          <span ng-click='adddiscuss()'>发送</span>
+        </p>
+      </div>
+      <div class='discuss_tool'>
+        <p ng-click='goCamera()'>
+          <img src="img/active/f1.jpg" alt="">
+        </p>
+        <p ng-click='imgpicker()'>
+          <img src="img/active/f2.jpg" alt="">
+        </p>
+      </div>
+    </ion-footer-bar>
+</ion-view>

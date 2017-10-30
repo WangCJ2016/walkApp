@@ -1,0 +1,124 @@
+<ion-view title='发帖'>
+  <ion-nav-buttons side="left">
+        <button class="button button-clear leftbtn" ng-click="goback()"></button>
+    </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+      <button class="button button-clear applybtn" ng-click="submitBtn()">发布</button>
+  </ion-nav-buttons>
+    <ion-content class=''>
+        <div class='post_wrap'>
+          <p>
+            <label for="">标题</label>
+            <input type="text" placeholder="不多于20个字" ng-model='sendDate.title'>
+          </p>
+          <p class='content'>
+            <label for="">内容</label>
+            <textarea name="name" placeholder="点击输入文字" ng-model='sendDate.content'></textarea>
+          </p>
+          <div class="addpic">
+            <div class="pic_box" ng-repeat='pics in sendpicArr'>
+              <img ng-src="{{pics}}" alt="">
+              <span ng-click='delpic($index)'></span>
+            </div>
+            <!-- <div class="pic_box">
+              <img src="img/home/eee.jpg" alt="">
+              <span ng-click='delpic($index)'></span>
+            </div> -->
+          </div>
+          <p class='about_site' ng-click='openModal()'>
+            <span>关联地点</span>
+            <i></i>
+          </p>
+          <ul class='sort_list'>
+            <li ng-repeat = 'choosesitelist in choosesitelist'  ng-click='todetail(choosesitelist.id,choosesitelist.star)'>
+              <div class="list_pic">
+                <img ng-src="{{choosesitelist.pictures.split(',')[0]}}" alt="">
+              </div>
+              <div class="list_cont">
+                <div class='list_title'>
+                  <h2>{{choosesitelist.name}}</h2>
+                  <div rating-value="choosesitelist.star" star class='star'></div>
+                </div>
+                <p><span>{{choosesitelist.address}}</span></p>
+                <!-- <i>约3.2km</i> -->
+                <p>{{choosesitelist.remark}}</p>
+                <div class='list_type'>
+                  <span ng-repeat = 'type in choosesitelist.typeNames'>{{type}}</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </ion-content>
+    <ion-footer-bar align-title="left" class="bar-assertive issuePic">
+      <div class="buttons">
+        <button class="button" ng-click='filepic()'></button>
+        <button class="button" ng-click = 'usecamera()'></button>
+      </div>
+    </ion-footer-bar>
+    <script id="mymodal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar>
+          <div class="header">
+                <div class="wrap">
+                  <div class="buttons">
+                     <button class="button button-clear lbtn_style" ng-click="closeModal()"></button>
+                 </div>
+                    <div class="search_btn search" ng-click="search()">
+                        <!-- <i>杭州市</i> -->
+                        <input type="text" placeholder="" ng-model = 'searchName.name' placeholder="根据地点名称搜索">
+                        <span ng-click='searchSite()'></span>
+                    </div>
+                    <div class='issue' ng-click='closeModal()'>
+                        <span>完成</span>
+                    </div>
+                </div>
+          </div>
+        </ion-header-bar>
+        <ion-content class='commonback'>
+            <div class='relator_place_wrap'>
+                <div class='maps' id='mapList'></div>
+                <h3>相关联地点</h3>
+                <ul class='sort_list'>
+                  <li ng-repeat = 'reportsitelist in reportsitelist' ng-class='{active:reportsitelist.checked == true}' ng-click='checkClick($index,reportsitelist.checked,reportsitelist.id)'>
+                    <div class="list_pic">
+                      <img ng-src="{{reportsitelist.pic}}" alt="">
+                    </div>
+                    <div class="list_cont">
+                      <div class='list_title'>
+                        <h2>{{reportsitelist.name}}</h2>
+                        <div rating-value="reportsitelist.star" star class='star'></div>
+                      </div>
+                      <p><span>{{reportsitelist.address}}</span></p>
+                      <!-- <i>约3.2km</i> -->
+                      <p>{{reportsitelist.remark}}</p>
+                      <div class='list_type'>
+                        <span ng-repeat = 'type in reportsitelist.typeNames'>{{type}}</span>
+                        <!-- <span>漂流</span> -->
+                      </div>
+                    </div>
+                  </li>
+                  <!-- <li>
+                    <div class="list_pic">
+                      <img src="img/home/123.jpg" alt="">
+                    </div>
+                    <div class="list_cont">
+                      <div class='list_title'>
+                        <h2>杭州西湖度假村</h2>
+                        <div rating-value="4" star class='star'></div>
+                      </div>
+                      <p><span>余杭区闲林中路234号</span><i>约3.2km</i></p>
+                      <p>山清水秀，风景优美</p>
+                      <div class='list_type'>
+                        <span>亲子</span>
+                        <span>漂流</span>
+                      </div>
+                    </div>
+                  </li> -->
+                </ul>
+            </div>
+            <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+          </ion-content>
+        </ion-modal-view>
+    </script>
+</ion-view>

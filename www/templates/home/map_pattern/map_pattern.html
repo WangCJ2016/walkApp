@@ -1,0 +1,43 @@
+<ion-view hide-nav-bar='true'>
+    <ion-header-bar>
+      <div class="header">
+            <div class="wrap">
+              <div class="buttons">
+                 <button class="button button-clear lbtn_style" ng-click="goback()"></button>
+             </div>
+                <div class="search_btn search" ng-click="search()">
+                    <input type="text" placeholder="请根据名称搜索" ng-model='searchName.name'>
+                    <span ng-click='searchSite()'></span>
+                </div>
+                <i></i>
+            </div>
+      </div>
+    </ion-header-bar>
+    <ion-content class='commonback'>
+        <div class='relator_place_wrap'>
+            <div class='maps' id='mapList'></div>
+            <div class='moresite'>
+              <h3>更多生态地点</h3>
+              <ul class='sort_list'>
+                <li ng-repeat = 'hotlist in hotlist' ng-click='todetail(hotlist.id,hotlist.star)'>
+                  <div class="list_pic">
+                    <img ng-src="{{hotlist.pic}}" alt="">
+                  </div>
+                  <div class="list_cont">
+                    <div class='list_title'>
+                      <h2>{{hotlist.name}}</h2>
+                      <div rating-value="hotlist.star" star class='star'></div>
+                    </div>
+                    <p><span>{{hotlist.address}}</span><i>约{{hotlist.scope}}</i></p>
+                    <p>{{hotlist.remark}}</p>
+                    <div class='list_type' >
+                      <span ng-repeat='type in hotlist.typeNames'>{{type}}</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </div>
+        <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

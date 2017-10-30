@@ -1,0 +1,18 @@
+<ion-view hide-nav-bar='true'>
+  <ion-header-bar>
+    <div class="clubheader">
+          <div class="wrap">
+              <div class="club_title">抢购</div>
+              <!-- <div class='search' ng-click="search()"></div> -->
+          </div>
+    </div>
+  </ion-header-bar>
+    <ion-content class='commonback'>
+      <div class='club_wrap'>
+        <img src="img/club/logo2.png" alt="">
+        <p>敬请期待...</p>
+      </div>
+        <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+        <ion-infinite-scroll ng-if="hasmore1" on-infinite="loadMore1()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,16 @@
+<ion-view title='我的资料'>
+    <ion-nav-buttons side="left">
+          <button class="button button-clear leftbtn" ui-sref="tab.mine"></button>
+    </ion-nav-buttons>
+    <ion-content class='commonback'>
+        <div class='mine_wrap'>
+            <ul class='mine_data myData'>
+              <li ng-click='changepic()'>头像<p><img ng-src="{{userpic}}" alt=""><i></i></p></li>
+              <li class='mydataback'>账户ID <p><span>{{username}}</span></p></li>
+              <li ui-sref = 'changename'>昵称<p><span>{{nickname}}</span><i></i></p></li>
+              <li ui-sref = 'changesex'>性别<p><span>{{sex}}</span><i></i></p></li>
+              <li ng-click='goCity()'>所属城市<p><span>{{city}}</span><i></i></p></li>
+            </ul>
+        </div>
+    </ion-content>
+</ion-view>

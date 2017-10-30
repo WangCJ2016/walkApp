@@ -1,0 +1,210 @@
+.header{
+  .active_title{
+    @include font-dpr(16px);
+    line-height: px2rem(88);
+    color:#fff;
+    font-family: 'MicrosoftYaHei';
+  }
+  .more{
+    width: px2rem(40);
+    height:px2rem(88);
+    margin-right: px2rem(30);
+    background: url('../img/active/more.png') no-repeat left center;
+    background-size: 100% px2rem(40);
+  }
+}
+.active_ban{
+  display: flex;
+  width: 100%;
+  height:px2rem(80);
+  background: #fff;
+  padding: 0 px2rem(30);
+  @include font-dpr(15px);
+  line-height: px2rem(80);
+  color:#333;
+  border-bottom: 1px solid #dbdbdb;
+  p{
+    margin-right: px2rem(60);
+    &.active{
+      color:$walkcolor;
+    }
+  }
+}
+.active_wrap{
+  padding-bottom: px2rem(100);
+  .active_content{
+    padding-bottom: px2rem(88);
+    padding-top:px2rem(81);
+    .column{
+      width: 100%;
+      padding:px2rem(20) px2rem(30);
+      background: #fff;
+      .person{
+        display: flex;
+        margin-bottom: px2rem(10);
+        img{
+          width: px2rem(50);
+          height:px2rem(50);
+          border-radius: 50%;
+          margin-right: px2rem(10);
+        }
+        span{
+          @include font-dpr(12px);
+          line-height: px2rem(50);
+        }
+      }
+      .intro{
+        padding:px2rem(15) 0;
+        @include font-dpr(16px);
+        line-height: px2rem(40);
+      }
+      .pic{
+        display: flex;
+        flex-wrap: nowrap;
+        img{
+          width: px2rem(222);
+          height:px2rem(222);
+        }
+        margin-bottom: px2rem(10);
+      }
+      .about{
+        padding-top: px2rem(10);
+        display: flex;
+        @include font-dpr(11px);
+        line-height: px2rem(26);
+        color:#999;
+        p{
+          em{
+            color:#02b4a1;
+          }
+          margin-right: px2rem(30);
+        }
+        i{
+          display: block;
+          margin-left: px2rem(30);
+          padding-left: px2rem(30);
+          background: url('../img/active/comment.png') no-repeat left center;
+          background-size: px2rem(20) px2rem(18);
+          &:last-child{
+            background: url('../img/active/read_1.png') no-repeat left center;
+            background-size: px2rem(26) px2rem(16);
+          }
+        }
+      }
+    }
+  }
+  .active_circle{
+    padding-bottom:px2rem(88);
+  }
+  .circle_title{
+    width: 100%;
+    height:px2rem(70);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 px2rem(30);
+    background: #fff;
+    margin-bottom: 1px;
+    @include font-dpr(13px);
+    line-height: px2rem(70);
+    margin-top: px2rem(20);
+    &:first-child{
+      margin-top: px2rem(81);
+    }
+    span{
+      color: $walkcolor;
+      margin-left: px2rem(20);
+      &:first-child{
+        display: inline-block;
+        padding-left: px2rem(35);
+        background: url('../img/active/add_jiaquan.png') no-repeat left center;
+        background-size:px2rem(29) px2rem(29);
+        &.change{
+          background: url('../img/active/barter.png') no-repeat left center;
+          background-size:px2rem(29) px2rem(29);
+        }
+      }
+    }
+  }
+  .circle_list{
+    li{
+      padding:px2rem(20) px2rem(30);
+      background: #fff;
+      position: relative;
+      display: flex;
+      .pic{
+        width: px2rem(100);
+        height:px2rem(100);
+        border-radius: px2rem(10);
+      }
+      .circle_content{
+        padding-left: px2rem(20);
+        .circleTitle{
+          display: flex;
+          @include font-dpr(15px);
+          p{
+            line-height: px2rem(70);
+          }
+          img{
+            width: px2rem(60);
+            height:px2rem(30);
+            margin-top: px2rem(18);
+            margin-left: px2rem(10);
+          }
+          span{
+            height:px2rem(32);
+            // display: inline;
+            margin-top: px2rem(18);
+            margin-left: px2rem(10);
+            border: 1px solid $walkcolor;
+            padding:px2rem(4);
+            border-radius: px2rem(6);
+            @include font-dpr(11px);
+            line-height: px2rem(22);
+            color:$walkcolor;
+          }
+        }
+        .personCount{
+          display: flex;
+          p{
+            margin-right: px2rem(20);
+            @include font-dpr(12px);
+            line-height: px2rem(28);
+            color: #666
+          }
+        }
+      }
+      .join{
+        position: absolute;
+        right:px2rem(30);
+        top:50%;
+        margin-top: px2rem(-23);
+        width: px2rem(94);
+        height:px2rem(46);
+        background: $walkcolor;
+        @include font-dpr(13px);
+        line-height: px2rem(46);
+        color:#fff;
+        text-align: center;
+        border-radius: px2rem(10);
+        font-family: 'MicrosoftYaHei';
+      }
+    }
+  }
+}
+.active_model{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    background: rgba(0,0,0,.4);
+}
+.active_model div img{
+    width: 100%;
+    position: relative;
+}

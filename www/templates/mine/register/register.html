@@ -1,0 +1,22 @@
+<ion-view title='快速注册'>
+    <ion-nav-buttons side="left">
+          <button class="button button-clear leftbtn" ui-sref="login"></button>
+    </ion-nav-buttons>
+    <ion-content class='commonback'>
+        <div class='register_wrap'>
+          <div class='register_cont'>
+            <p>
+              <label for="tel">手机号:</label>
+              <input type="number" placeholder="请输入手机号" id='tel' ng-value="sendData.userName" ng-maxlength="11" ng-model="sendData.userName" required />
+              <span ng-click='getVerifyCode()'>获取验证码</span>
+              <span ng-if = 'gaincode' >{{num}}秒后重新获取</span>
+            </p>
+            <p>
+              <label for="code">验证码:</label>
+              <input type="number" id='code' placeholder="请输入验证码" ng-minlength="6" ng-maxlength="6" ng-model="sendData.code" required/>
+            </p>
+          </div>
+          <div class="register_btn" ng-click='next()'>下一步</div>
+        </div>
+    </ion-content>
+</ion-view>

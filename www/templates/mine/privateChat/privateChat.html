@@ -1,0 +1,29 @@
+<ion-view title='私聊'>
+  <ion-nav-buttons side="left">
+        <button class="button button-clear leftbtn" ng-click="goback()"></button>
+    </ion-nav-buttons>
+    <ion-content class='commonback'>
+        <div class='privateChat_wrap'>
+          	<div class="chat_block {{chat.sendId == userid?'self':'chatperson'}}" ng-repeat="chat in chats">
+              <img ng-src="{{chat.userPhoto||'img/mine/login/logo.png'}}">
+      				<div class="message">
+      					<i class="{{chat.sendId == userid?'ion-arrow-right-b':'ion-arrow-left-b'}} "></i>
+      					<p class="message">{{chat.message}}</p>
+      				</div>
+          	</div>
+          	<div class='chat_block self' ng-repeat="item in send">
+                <img ng-src="{{user.photo||'img/mine/login/logo.png'}}">
+                <div class="message">
+                  <i class="ion-arrow-right-b"></i>
+                  <p class="message">{{item}}</p>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar align-title="" class="bar-assertive privateChat_footer">
+      	<div class='text_input '>
+          	<textarea name="name" ng-model='message'></textarea>
+          	<span ng-click='sendChat(message)'>发送</span>
+      	</div>
+    </ion-footer-bar>
+</ion-view>

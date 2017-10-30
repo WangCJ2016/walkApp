@@ -1,0 +1,24 @@
+<ion-view title='性别'>
+    <ion-nav-buttons side="left">
+          <button class="button button-clear leftbtn" ui-sref='mydata'></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-clear applybtn" ng-click="changeSex()">完成</button>
+    </ion-nav-buttons>
+    <ion-content  class='commonback has-footer'>
+      <div class="changename_warp changesex_warp">
+          <div class="change" ng-repeat = 'sexs in sexs' ng-click='checkSex($index)'>
+            <div class="sex" >
+              <p>{{sexs}}</p>
+              <i ng-if = 'sexIndex == $index'></i>
+            </div>
+          </div>
+          <!-- <div class="change">
+            <div class="sex noborder">
+              <p>女</p>
+              <i ng-if='false'></i>
+            </div>
+          </div> -->
+      </div>
+    </ion-content>
+</ion-view>

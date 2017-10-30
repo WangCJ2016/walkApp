@@ -1,0 +1,54 @@
+.bar_home_on{
+    background:url('../img/tabs/home.png') no-repeat center;
+    background-size:px2rem(44) px2rem(44);
+}
+.bar_home_off{
+    background:url('../img/tabs/home_1.png') no-repeat center;
+    background-size:px2rem(44) px2rem(44);
+}
+.bar_active_on{
+    background:url('../img/tabs/ecosphere.png') no-repeat center;
+    background-size:px2rem(44) px2rem(44);
+}
+.bar_active_off{
+    background:url('../img/tabs/ecosphere_1.png') no-repeat center;
+    background-size:px2rem(44) px2rem(44);
+}
+.bar_club_on{
+    background:url('../img/tabs/Hot.png') no-repeat center;
+    background-size:px2rem(44) px2rem(44);
+}
+.bar_club_off{
+    background:url('../img/tabs/Hot_1.png') no-repeat center;
+    background-size:px2rem(44) px2rem(44);
+}
+.bar_mine_on{
+    background:url('../img/tabs/my.png') no-repeat center;
+    background-size:px2rem(44) px2rem(44);
+}
+.bar_mine_off{
+    background:url('../img/tabs/my_1.png') no-repeat center;
+    background-size:px2rem(44) px2rem(44);
+}
+.tabs-striped .tabs{
+  height:px2rem(98);
+   background: #f2f2f2;
+   border: none;
+   border-top: 1px solid #dfdfdf !important;
+}
+.tab-item {
+ max-width:px2rem(500);
+ overflow:visibility;
+ .icon{
+    height:px2rem(60);
+  }
+}
+// .tabs-striped .tab-item.activated:hover{
+//     border:none ;
+// }
+// .tabs-striped .tab-item.tab-item-active{
+//     border:none ;
+// }
+.tab-item:hover{
+  text-decoration: none;
+}

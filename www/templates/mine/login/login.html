@@ -1,0 +1,22 @@
+<ion-view hide-nav-bar='true'>
+    <ion-content class='loginback'>
+          <div class='login_wrap'>
+            <div class='close' ng-click='goback()'></div>
+            <div class='logo'></div>
+            <div class='login_input'>
+              <p>
+              <label for="user">账号</label>
+                <input type="text" id='user' ng-value="sendData.userName" ng-blur="checkTel()" ng-model="sendData.userName" placeholder="请输入手机号" />
+              </p>
+              <p>
+                <label for="pwd">密码</label>
+                  <input type="password" id='pwd' ng-model='sendData.password' ng-pattern='/[a-zA-Z\d+]{6,36}/'  placeholder="请输入密码" />
+              </p>
+            </div>
+            <div class='login_btn' ng-click='login()'>立 即 登 录</div>
+            <div class='forget_pwd'>
+              <a href="#/forgetPwd">忘记密码?</a> | <a href="javaScript:;" ng-click='register()'>立即注册</a>
+            </div>
+          </div>
+    </ion-content>
+</ion-view>

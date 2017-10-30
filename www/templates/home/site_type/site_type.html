@@ -1,0 +1,18 @@
+<ion-view title='地点特色'>
+    <ion-nav-buttons side="left">
+          <button class="button button-clear leftbtn"ng-click="goback()"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-clear applybtn" ng-click="complete()">完成</button>
+    </ion-nav-buttons>
+    <ion-content class=''>
+        <div class='site_wrap'>
+          <h3>可添加多个标签</h3>
+          <ul class='type_label'>
+            <li ng-repeat='site_type in site_type' ng-click='checkClick($index,site_type.checked,site_type.id,site_type.name)'>
+              <label for=""  ng-class='{active:site_type.checked}'>{{site_type.name}}</label>
+            </li>
+          </ul>
+        </div>
+    </ion-content>
+</ion-view>

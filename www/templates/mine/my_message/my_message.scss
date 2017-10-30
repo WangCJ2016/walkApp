@@ -1,0 +1,35 @@
+.my_message_wrap{
+  .message_list{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 px2rem(30);
+    height:px2rem(140);
+    background: #fff;
+    .message_list_l{
+      display: flex;
+      padding:px2rem(20) 0;
+      img{
+        width: px2rem(100);
+        height:px2rem(100);
+        border-radius: 50%;
+        margin-right: px2rem(10);
+      }
+      em{
+        display: block;
+        @include font-dpr(14px);
+        line-height: px2rem(48);
+        color:#333;
+      }
+      i{
+        @include font-dpr(11px);
+        line-height: px2rem(42);
+        color:#999;
+      }
+    }
+    span{
+      @include font-dpr(13px);
+      line-height: px2rem(140);
+      color:$walkcolor;
+    }
+  }
+}

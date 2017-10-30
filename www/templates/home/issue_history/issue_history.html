@@ -1,0 +1,33 @@
+<ion-view title='发布历史'>
+    <ion-nav-buttons side="left">
+          <button class="button button-clear leftbtn" ui-sref="tab.mine"></button>
+    </ion-nav-buttons>
+    <ion-content class='commonback'>
+        <div class='issue_history_wrap'>
+          <div class='classify'>
+            <div><p ng-click='fram()' ng-class="{active:farmshow}">生态农庄<i ng-class="{active:farmshow}"></i></p><span></span></div>
+            <div ng-repeat='typeArr in typeArr'><p ng-click='typeclick($index)' ng-class="{active:i==$index}">{{typeArr}}<i ng-class="{active:i==$index}"></i></p><span></span></div>
+          </div>
+            <ul>
+              <li ng-repeat = 'dataArr in dataArr' ng-click='todetail(dataArr.id)'>
+                <p class='issue_title'><span>{{dataArr.name}}</span><i>{{type}}</i></p>
+                <div class='issue_cont'>
+                  <span>共有{{dataArr.commentCount}}条评论</span>
+                  <div class='del_btn'>
+                    <p ng-click='edit($index,$event,dataArr.id,dataArr.phone,dataArr.name)' ng-if = 'editshow'>编辑</p>
+                    <p ng-click='delete($index,$event,dataArr.id)'>删除</p>
+                  </div>
+                </div>
+                <div class='issue_person'>
+                  <div class='person_data'>
+                    <img ng-src="{{dataArr.user.photo}}" alt="">
+                    <p>{{dataArr.user.nickname}}</p>
+                  </div>
+                  <i>{{dataArr.createTime}}</i>
+                </div>
+              </li>
+            </ul>
+        </div>
+        <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

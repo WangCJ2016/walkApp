@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+   <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>行者</title>
+
+    <link rel="manifest" href="manifest.json">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <!-- <link href="lib/ionic/css/ionic.css" rel="stylesheet"> -->
+    <link href="css/ionic.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
+    <script src="lib/ionic-citypicker/dist/ionic-citypicker.min.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/directive.js"></script>
+    <!-- map -->
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css" />
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.0&key=db834b40077df1a9574a3faf3cd17f72&plugin=AMap.DistrictSearch,AMap.CitySearch,AMap.Geocoder,AMap.Driving,AMap.Autocomplete,AMap.PlaceSearch"></script>
+    <!-- controllers -->
+    <script type="text/javascript" src="templates/home/product/productCtrl.js"></script>
+    <script type="text/javascript" src="templates/activity/map/mapCtrl.js"></script>
+    <script type="text/javascript" src="templates/home/getcity/getcityCtrl.js"></script>
+    <script type="text/javascript" src="templates/mine/register/registerCtrl.js"></script>
+    <script type="text/javascript" src="templates/mine/login/loginCtrl.js"></script>
+    <script type="text/javascript" src="templates/mine/forgetPwd/forgetPwdCtrl.js"></script>
+    <script type="text/javascript" src="templates/activity/activityCtrl.js"></script>
+    <script type="text/javascript" src="templates/activity/activity_detail/activity_detailCtrl.js"></script>
+    <script type="text/javascript" src="templates/activity/newActive/newActiveCtrl.js"></script>
+    <script type="text/javascript" src="templates/activity/say_some/say_someCtrl.js"></script>
+    <script type="text/javascript" src="templates/home/homeCtrl.js"></script>
+    <script type="text/javascript" src="templates/mine/mineCtrl.js"></script>
+    <script type="text/javascript" src="templates/home/issue_new/issue_newCtrl.js"></script>
+    <script type="text/javascript" src="templates/mine/mydata/mydataCtrl.js"></script>
+    <script type="text/javascript" src="templates/mine/change/changeCtrl.js"></script>
+    <script type="text/javascript" src="templates/mine/changepwd/changepwdCtrl.js"></script>
+    <script type="text/javascript" src="templates/home/detail/detailCtrl.js"></script>
+    <script type="text/javascript" src="templates/activity/morepic/morepiCtrl.js"></script>
+    <script type="text/javascript" src="templates/home/discuss/discussCtrl.js"></script>
+    <script type="text/javascript" src="templates/mine/privateChat/privateChatCtrl.js"></script>
+    <script type="text/javascript" src="templates/mine/chatList/chatlistCtrl.js"></script>
+    <script type="text/javascript" src="templates/activity/chat/chatCtrl.js"></script>
+    <script type="text/javascript" src="templates/activity/take_part/take_partCtrl.js"></script>
+    <script type="text/javascript" src="templates/home/search/searchCtrl.js"></script>
+    <script type="text/javascript" src="templates/home/discuss_list/discuss_listCtrl.js"></script>
+    <script type="text/javascript" src="templates/activity/post_detail/post_detailCtrl.js"></script>
+    <script type="text/javascript" src="templates/home/report/reportCtrl.js"></script>
+    <script type="text/javascript" src="templates/home/site_search/site_searchCtrl.js"></script>
+    <script type="text/javascript" src="templates/activity/issue_post/issue_postCtrl.js"></script>
+    <script type="text/javascript" src="templates/mine/person_data/person_dataCtrl.js"></script>
+    <script type="text/javascript" src="templates/home/getcity/choosecityCtrl.js"></script>
+    <script type="text/javascript" src="templates/activity/Aboutpost/AboutpostCtrl.js"></script>
+    <script type="text/javascript" src="templates/home/site_type/site_typeCtrl.js"></script>
+    <script type="text/javascript" src="templates/home/map_pattern/map_patternCtrl.js"></script>
+  </head>
+  <body ng-app="starter">
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <ion-nav-bar class="bar-stable">
+    </ion-nav-bar>
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<ion-view title='消息列表'>
+  <ion-nav-buttons side="left">
+        <button class="button button-clear leftbtn" ui-sref="tab.mine"></button>
+  </ion-nav-buttons>
+  <ion-content class='commonback'>
+      <div class='attention_wrap'>
+          <div class='list_cont' ng-repeat='item in chats' ng-click="go(item)">
+            <div class='person_data'>
+              <img ng-if="item.receiveId == userdata.userId" ng-src="{{item.userPhoto||'img/mine/login/logo.png'}}" alt="">
+              <img ng-if="item.receiveId != userdata.userId" ng-src="{{item.userPhoto||'img/mine/login/logo.png'}}" alt="">
+              <p>
+                <span ng-if="item.receiveId == userdata.userId">{{item.userNickname}}</span>
+                <span ng-if="item.receiveId != userdata.userId">{{item.userNickname}}</span>
+                <i>{{item.message}}</i>
+              </p>
+            </div>
+            <p class='btn'>
+              <span>{{item.updateTime}}</span>
+            </p>
+          </div>
+      </div>
+  </ion-content>
+</ion-view>
