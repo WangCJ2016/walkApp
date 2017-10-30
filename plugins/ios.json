@@ -1,0 +1,58 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.baiyouxinxi.walkApp"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.baiyouxinxi.walkApp"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.baiyouxinxi.walkApp"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.baiyouxinxi.walkApp"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.baiyouxinxi.walkApp"
+    },
+    "cordova-plugin-camera": {
+      "CAMERA_USAGE_DESCRIPTION": " ",
+      "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "com.baiyouxinxi.walkApp"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.baiyouxinxi.walkApp"
+    },
+    "cordova-plugin-geolocation": {
+      "GEOLOCATION_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "com.baiyouxinxi.walkApp"
+    },
+    "cordova-plugin-image-picker": {
+      "PHOTO_LIBRARY_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "com.baiyouxinxi.walkApp"
+    },
+    "hewz.plugins.baidu-location": {
+      "API_KEY": "3zc9LsvV7wMIzbSWFhldqdQAzs3KOmhT",
+      "PACKAGE_NAME": "com.baiyouxinxi.walkApp"
+    },
+    "cordova-plugin-wechat": {
+      "WECHATAPPID": "wxf4cbb474beadda77",
+      "PACKAGE_NAME": "com.baiyouxinxi.walkApp"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "com.baiyouxinxi.walkApp"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.baiyouxinxi.walkApp"
+    }
+  }
+}

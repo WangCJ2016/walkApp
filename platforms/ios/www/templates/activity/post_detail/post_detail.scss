@@ -1,0 +1,133 @@
+.bar-stable .button.button-clear.share{
+  background: url(../img/active/compile_1.png);
+  background-size: 100% 100%;
+}
+.postDetail_wrap{
+  padding-bottom: px2rem(100);
+  h3{
+    @include font-dpr(16px);
+    line-height: px2rem(60);
+    margin: 0;
+    background: #fff;
+    padding: 0 px2rem(30);
+  }
+  .person-data{
+    padding: 0 px2rem(30);
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding-top:px2rem(20);
+    .person{
+      display: flex;
+      img{
+        width:px2rem(60);
+        height:px2rem(60);
+        border-radius: 50%;
+        margin:px2rem(3) px2rem(20) 0 0;
+      }
+      h4{
+        margin:0;
+        @include font-dpr(12px);
+        line-height: px2rem(34);
+      }
+      span{
+        @include font-dpr(11px);
+        line-height: px2rem(32);
+        color:#999;
+      }
+    }
+    p{
+      width:px2rem(40);
+      height:px2rem(40);
+      background: url('../img/home/message_1.png');
+      background-size: 100% 100%;
+      margin-top: px2rem(10);
+    }
+  }
+  .person_data{
+    .person{
+      .nameStar{
+        span{
+          line-height: px2rem(60);
+        }
+      }
+    }
+  }
+  .post_content{
+    background: #fff;
+    padding: 0 px2rem(30) px2rem(30);
+    margin-bottom: px2rem(20);
+    p{
+      @include font-dpr(13px);
+      line-height: px2rem(46);
+      color: #666;
+      text-indent: px2rem(50);
+    }
+    .pics{
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: px2rem(30);
+      img{
+        width: px2rem(223);
+        height: px2rem(223);
+        margin-right: px2rem(5);
+      }
+    }
+    .morepic{
+      display: flex;
+      justify-content: flex-end;
+      p{
+        @include font-dpr(13px);
+        line-height: px2rem(50);
+        padding-right: px2rem(20);
+        background: url('../img/mine/arrows.png') no-repeat right center;
+        background-size: px2rem(13) px2rem(24);
+      }
+    }
+  }
+  .commentsList{
+      padding-bottom: px2rem(100);
+  }
+  .about{
+    margin:px2rem(20) 0 1px;
+    .about_title{
+      padding: 0 px2rem(30);
+      display: flex;
+      height: px2rem(60);
+      justify-content: space-between;
+      @include font-dpr(13px);
+      line-height: px2rem(60);
+      background: #fff;
+      span{
+        display: block;
+        width: px2rem(13);
+        height:100%;
+        background: url('../img/mine/arrows.png') no-repeat left center;
+        background-size: 100% px2rem(24);
+      }
+    }
+  }
+}
+.bar.bar-assertive.discussFoot{
+  background: #fff;
+  padding: 0 px2rem(30);
+  border-top: 1px solid #ccc;
+  height: px2rem(90);
+  display: flex;
+  justify-content: space-between;
+  input{
+    width: px2rem(553);
+    height:px2rem(59);
+    background: #f0f0f0;
+    border-radius: px2rem(10);
+    border: 1px solid #ededed;
+    margin-top: px2rem(15);
+  }
+  .button{
+    border: none;
+    width: px2rem(118);
+    height: px2rem(59);
+    background: $walkcolor;
+    margin-top: px2rem(15);
+  }
+}

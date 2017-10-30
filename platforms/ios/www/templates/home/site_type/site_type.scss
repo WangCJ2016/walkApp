@@ -1,0 +1,35 @@
+.site_wrap{
+  h3{
+    padding:0 px2rem(30);
+    line-height:px2rem(110);
+    @include font-dpr(15px);
+    color:#999;
+    margin:0;
+  }
+  .type_label{
+    padding-left:px2rem(30);
+    display:flex;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    li{
+      label{
+        display: block;
+        padding: 0 px2rem(30);
+        @include font-dpr(15px);
+        line-height:px2rem(54);
+        border: 1px solid #ccc;
+        border-radius: px2rem(8);
+        margin-bottom: px2rem(10);
+        margin-right: px2rem(20);
+        &.active{
+          border: none;
+          background: $walkcolor;
+          color:#fff;
+        }
+      }
+      input{
+        display: none;
+      }
+    }
+  }
+}

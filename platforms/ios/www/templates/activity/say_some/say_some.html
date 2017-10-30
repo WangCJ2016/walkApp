@@ -1,0 +1,100 @@
+<ion-view title='说点什么'>
+  <ion-nav-buttons side="left">
+        <button class="button button-clear leftbtn" ng-click="goback()"></button>
+    </ion-nav-buttons>
+    <ion-content class=''>
+        <div class='say_some_wrap'>
+            <div class="dis_list">
+              <span>地点名称</span>
+              <p class='tel'>
+                <input type="text" name="" value="" ng-model='discuss.name' placeholder="请填写名称">
+              </p>
+            </div>
+            <div class="dis_list">
+              <span>简单介绍</span>
+              <textarea name="name" ng-model='discuss.content' placeholder="请简单描述">
+              </textarea>
+            </div>
+            <div class="dis_list">
+              <span>商家电话</span>
+              <p class='tel'>
+                <input type="text" name="" value=""  ng-model='discuss.tel' ng-blur = 'checkTel()' placeholder="请填写商家电话">
+              </p>
+            </div>
+            <div class='say_type'>
+              <div class="type" ng-click='openModal1()'>
+                <span>所在位置</span>
+                <p>{{addr}}</p>
+                <i class='next'></i>
+              </div>
+            </div>
+            <div class='say_type'>
+              <div class="type" >
+                <span>地点特色</span>
+                <p></p>
+                <i ng-click='openModal()'></i>
+              </div>
+              <div class='typelist'>
+                <span ng-repeat='checkedList in checkedList'>{{checkedList.name}}</span>
+              </div>
+            </div>
+            <div class='say_type'>
+              <div class="type">
+                <span>图片</span>
+                <p></p>
+                <i></i>
+              </div>
+              <div class="addpic">
+                <div class="pic_box" ng-repeat='pics in pics'>
+                  <img ng-src="{{pics}}" alt="">
+                  <span ng-click='delpic($index)'></span>
+                </div>
+                <div class='add' ng-click='changepic()' ng-show='addPic'></div>
+              </div>
+            </div>
+            <div class='say_somebtn' ng-click='submitbtn()'>完 成</div>
+        </div>
+  </ion-content>
+  <script id="modal.html" type="text/ng-template">
+    <div class="modal">
+      <ion-header-bar>
+        <h1 class="title">地点特色</h1>
+        <div class="buttons">
+          <button class="button button-clear rbtn_style" ng-click='closeModal()'>完成</button>
+        </div>
+      </ion-header-bar>
+      <ion-content class=''>
+          <div class='site_wrap'>
+            <h3>可添加多个标签</h3>
+            <ul class='type_label'>
+              <li ng-repeat='site_type in site_type' ng-click='checkClick($index,site_type.checked,site_type.id)'>
+                <label for=""  ng-class='{active:site_type.checked}'>{{site_type.name}}</label>
+                <input type="checkbox" name="" value="">
+              </li>
+            </ul>
+          </div>
+      </ion-content>
+    </div>
+  </script>
+  <script id="mapmodal.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar>
+          <h1 class="title">修改地点</h1>
+        </ion-header-bar>
+        <ion-content class='commonback'>
+            <div class='issue_new_wrap'>
+                <div id='map'>
+                  <div class='map_icon'></div>
+                </div>
+                <div class='label_cont'>
+                  <p>
+                    <label for="location"></label>
+                    <span class="address">{{address.data}}</span>
+                  </p>
+                  <div class='issue_newbtn' ng-click='closeModal1()'>下一步</div>
+                </div>
+            </div>
+        </ion-content>
+      </ion-modal-view>
+  </script>
+</ion-view>

@@ -1,0 +1,44 @@
+.report_wrap{
+  h2{
+    height: px2rem(98);
+    padding:0 px2rem(30);
+    color: #999;
+    @include font-dpr(15px);
+    line-height: px2rem(98);
+    margin:0;
+  }
+  .report_cont{
+    p{
+      padding: 0 px2rem(30);
+      margin-bottom: 1px;
+      @include font-dpr(15px);
+      line-height: px2rem(80);
+      background: #fff;
+      color: #333;
+      textarea{
+        width: 100%;
+        height: px2rem(200);
+        resize:none;
+        border: 1px solid #ccc;
+      }
+      &.active{
+        color:$walkcolor;
+      }
+      &:last-child{
+        padding-bottom: px2rem(20);
+      }
+    }
+  }
+  .completeBtn{
+    width:px2rem(690);
+    height:px2rem(70);
+    background: $walkcolor;
+    border-radius: px2rem(10);
+    text-align: center;
+    line-height:px2rem(70);
+    @include font-dpr(15px);
+    color:#fff;
+    margin: 0 auto;
+    margin-top: px2rem(200);
+  }
+}

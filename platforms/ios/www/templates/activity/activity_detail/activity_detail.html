@@ -1,0 +1,59 @@
+<ion-view title="{{circledata.name}}">
+    <ion-nav-buttons side="left">
+        <button class="button button-clear leftbtn" ng-click="goback()"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-clear rightbtn edit" ng-click='gopost(circledata.id)'></button>
+    </ion-nav-buttons>
+    <ion-content class='commonback' ng-click='notshow()'>
+        <div class='activity_detail_wrap'>
+          <div class='circle'>
+              <img ng-src="{{circledata.photo}}" class='pic' alt="">
+              <div class="circle_content">
+                <div class="circleTitle">
+                  <p>{{circledata.name}}</p>
+                  <span>{{circledata.appTypeName}}</span>
+                </div>
+                <p class='describe'>{{circledata.remark}}</p>
+                <div class="personCount">
+                  <p>帖子：{{circledata.postCount}}</p>
+                  <p>成员：{{circledata.userCount}}</p>
+                </div>
+              </div>
+          </div>
+          <div class="master">
+            <p>圈主：</p>
+            <img ng-src="{{circledata.userPhoto}}" alt="">
+            <p>{{circledata.userNickname}}</p>
+            <div class='quit' ng-click='Joincircle(circledata.userId)'>{{isJoin == 1?'退出':'加入'}}</div>
+          </div>
+          <ul class="relevance">
+            <li ng-repeat = 'postlist in postlist' ng-click='topostdetail(postlist.id)'>
+              <div class="issuePerson">
+                <div class="person">
+                  <img ng-src="{{postlist.userPhoto}}" alt="">
+                  <p>
+                    <span>{{postlist.userNickname}}</span>
+                    <span>{{postlist.createTime}}</span>
+                  </p>
+                </div>
+                <p class='count'>
+                  <span>{{postlist.viewCount}}</span>
+                  <span>{{postlist.commentCount}}</span>
+                </p>
+              </div>
+              <div class="title">{{postlist.title}}</div>
+              <div class="reason">推荐理由：{{postlist.contents}}</div>
+              <div class="pics">
+                <img ng-src="{{pics}}" alt="" ng-repeat='pics in postlist.pics'>
+              </div>
+            </li>
+          </ul>
+          <p class='noDataTips' ng-show = 'postlist.length <= 0'>亲，该圈子下暂时没有帖子哦</p>
+        </div>
+        <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+    <div class="slide_pic backdrop visible" ng-class='{active:big_pics.length>0}' ng-show="big_pics.length>0" ng-click="pic_hide()">
+        <img class="model_bigpic" ng-src="{{big_pic}}" on-swipe-left="next_pic(pic_index,big_pics)" on-swipe-right="prev_pic(pic_index,big_pics)">
+    </div>
+</ion-view>

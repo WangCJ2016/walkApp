@@ -1,0 +1,43 @@
+<ion-view title='加圈'>
+  <ion-nav-buttons side="left">
+        <button class="button button-clear leftbtn" ng-click="goback()"></button>
+    </ion-nav-buttons>
+    <ion-content class=''>
+        <div class='takePart_wrap'>
+          <div class='join_ban'>
+            <p class='type' ng-class='{active:i == $index || index == typeList.id}' ng-repeat='typeList in typeList' ng-click='chooseType($index,typeList.id)'>{{typeList.name}}</p>
+          </div>
+          <ul class='circle_list'>
+            <li ng-repeat='circlelist in circlelist' ng-click='tocircledetail(circlelist.id,circlelist.isJoin)'>
+              <img ng-src="{{circlelist.photo}}" class='pic' alt="">
+              <div class="circle_content">
+                <div class="circleTitle">
+                  <p>{{circlelist.name}}</p>
+                </div>
+                <div class="personCount">
+                  <p>帖子：{{circlelist.postCount}}</p>
+                  <p>成员：{{circlelist.userCount}}</p>
+                </div>
+              </div>
+              <div class="join" ng-click='Joincircle(circlelist.id,circlelist.isJoin,$index,$event,circledata.userId)'>{{circlelist.isJoin == 1?'退出':'加入'}}</div>
+            </li>
+            <!-- <li>
+              <img ng-src="img/home/123.jpg" class='pic' alt="">
+              <div class="circle_content">
+                <div class="circleTitle">
+                  <p>杭州西湖</p>
+                  <span>生态美食</span>
+                </div>
+                <div class="personCount">
+                  <p>帖子：2</p>
+                  <p>成员：2</p>
+                </div>
+              </div>
+              <div class="join" ng-click='addcircle(circlelist.id,circlelist.isJoin)'>加入</div>
+            </li> -->
+          </ul>
+          <p class='noDataTips' ng-show = 'circlelist.length <= 0'>亲，没有此类圈子哦</p>
+        </div>
+        <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

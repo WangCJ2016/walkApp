@@ -1,0 +1,92 @@
+.bar-stable .button.button-clear.applybtn{
+  height:px2rem(88);
+  line-height:px2rem(88);
+  @include font-dpr(16px);
+  color:#fff333;
+  top:0;
+  margin-top:0;
+  margin-right: px2rem(40);
+}
+.post_wrap{
+  p{
+    padding: 0 px2rem(30);
+    border-bottom: 1px solid #ededed;
+    &:first-child{
+      height:px2rem(80);
+      display: flex;
+    }
+    &.content{
+      border-bottom: none;
+    }
+    &.about_site{
+      height:px2rem(80);
+      display: flex;
+      justify-content: space-between;
+      line-height:px2rem(80);
+      @include font-dpr(15px);
+      border-top: 1px solid #ededed;
+      i{
+        display: block;
+        width: px2rem(14);
+        height: 100%;
+        background: url('../img/mine/arrows.png') no-repeat left center;
+        background-size: 100% px2rem(24);
+      }
+    }
+    label{
+      line-height:px2rem(80);
+      @include font-dpr(15px);
+    }
+    input{
+      width:85%;
+      height:92%;
+      padding-left: px2rem(15);
+    }
+    textarea{
+      width: 100%;
+      height:px2rem(300);
+      resize: none;
+      margin-bottom: px2rem(20);
+    }
+  }
+  .addpic{
+    display: flex;
+    flex-wrap: wrap;
+    padding: px2rem(20) px2rem(30);
+    .pic_box{
+      position: relative;
+      margin-right:px2rem(10);
+      span{
+        position: absolute;
+        top:0;
+        right:0;
+        display: block;
+        width: px2rem(30);
+        height: px2rem(30);
+        background: url('../img/active/cancel.png');
+        background-size:100% 100%;
+      }
+    }
+    img{
+      width:px2rem(140);
+      height:px2rem(140);
+    }
+  }
+}
+.bar.bar-assertive.issuePic{
+  background: #fff;
+  padding-left: px2rem(30);
+  border-top: 1px solid #ededed;
+  height: px2rem(90);
+  .button{
+    &:first-child{
+      background: url('../img/active/picture_1.png') no-repeat left center;
+      background-size: 100% px2rem(50);
+    }
+    border: none;
+    width: px2rem(50);
+    background: url('../img/active/camera.png') no-repeat left center;
+    background-size: 100% px2rem(50);
+    margin-right: px2rem(40);
+  }
+}

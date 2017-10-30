@@ -1,0 +1,9 @@
+angular.module('starter.controllers',
+[
+  'productController','mapController',
+  'getcityController','choosecityController','registerController','loginController','activity_detailController',
+  'say_someController','newActiveController','issue_newController',
+  'activityController','mineController','mydataController','changeController','changepwdController',
+  'detailController','morepicController','homeController','discussController',
+  'chatController','take_partController','searchController','privateChatController','chatlistController','discuss_listController','post_detailController','reportController','site_searchController','issue_postController','person_dataController','forgetPwdController','AboutpostController','site_typeController','map_patternController'
+])

@@ -1,0 +1,91 @@
+<ion-view hide-nav-bar='true'>
+  <ion-header-bar>
+    <div class="buttons">
+       <button class="button button-clear lbtn_style" ng-click="goback()"></button>
+   </div>
+   <h1 class="title">帖子详情</h1>
+   <div class="buttons">
+     <button class="button button-clear rightbtn edit" ng-click='goupdataPost(siteDateil.userId)'></button>
+   </div>
+  </ion-header-bar>
+    <ion-content class='commonback'>
+      <div class='postDetail_wrap'>
+        <h3>{{siteDateil.title}}</h3>
+        <div class='person-data'>
+          <div class="person">
+            <img ng-src="{{siteDateil.userPhoto}}" alt="">
+            <div class="person_name">
+              <h4>{{siteDateil.userNickname}}</h4>
+              <span>{{siteDateil.createTime}}</span>
+            </div>
+          </div>
+          <p ng-click='go(siteDateil.userId)'></p>
+        </div>
+        <div class="post_content">
+          <p>{{siteDateil.contents}}</p>
+          <div class="pics">
+            <img alt="" ng-repeat= 'pics in siteDateil.pics' ng-src="{{pics}}" ng-click="big_pic_fun({{siteDateil.pics}} , '{{pics}}')">
+          </div>
+          <!-- <div class='morepic'>
+            <p>更多</p>
+          </div> -->
+        </div>
+        <div class="about">
+          <div class='about_title'>
+            <p>相关点</p>
+            <span></span>
+          </div>
+        </div>
+        <ul class='sort_list'>
+          <li ng-repeat = 'site in siteDateil.siteList' ng-click='todetail(site.id,site.star)'>
+            <div class="list_pic">
+              <img ng-src="{{site.pictures.split(',')[0]}}" alt="">
+            </div>
+            <div class="list_cont" >
+              <div class='list_title'>
+                <h2>{{site.name}}</h2>
+                <div rating-value="site.star" star class='star'></div>
+              </div>
+              <p><span>{{site.address}}</span><i>约{{site.scope}}</i></p>
+              <p>{{site.remark}}</p>
+              <div class='list_type'>
+                <span ng-repeat ='types in site.typeArr'>{{types}}</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="about">
+          <div class='about_title'>
+            <p>评论（{{siteDateil.commentCount}}）</p>
+          </div>
+        </div>
+        <div class="commentsList">
+          <div class="site_comments" ng-repeat ='siteCommentlist in siteCommentlist'>
+            <div class="person_data">
+              <div class="person">
+                <img ng-src="{{siteCommentlist.userPhoto}}" alt="">
+                <div class="nameStar">
+                  <span>{{siteCommentlist.userNickname}}</span>
+                </div>
+              </div>
+              <div class='date'>{{siteCommentlist.createTime}}</div>
+            </div>
+            <p class='eval_cont'>{{siteCommentlist.contents}}</p>
+          </div>
+        </div>
+        <p class='noDataTips' ng-show = 'siteCommentlist.length <= 0'>亲，暂无评论哦</p>
+      </div>
+    <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+    <ion-footer-bar align-title="left" class="bar-assertive discussFoot">
+      <div class="discussCont">
+          <input type="text" name="" value="" placeholder="回复楼主" ng-model='addDiscuss.cont'>
+      </div>
+      <div class="buttons" ng-click="">
+        <button class="button" ng-click='issueDiscuss()'>发布</button>
+      </div>
+    </ion-footer-bar>
+    <div class="slide_pic backdrop visible" ng-class='{active:big_pics.length>0}' ng-show="big_pics.length>0" ng-click="pic_hide()">
+        <img class="model_bigpic" ng-src="{{big_pic}}" on-swipe-left="next_pic(pic_index,big_pics)" on-swipe-right="prev_pic(pic_index,big_pics)">
+    </div>
+</ion-view>

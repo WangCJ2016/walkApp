@@ -1,0 +1,153 @@
+.bar-stable .button.button-clear.edit{
+  background: url('../img/active/compile_1.png');
+  background-size: 100% 100%;
+}
+.activity_detail_wrap{
+  .circle{
+    background: #fff;
+    display: flex;
+    padding:px2rem(20) px2rem(30);
+    .pic{
+      width: px2rem(140);
+      height:px2rem(140);
+      border-radius: px2rem(10);
+    }
+    .circle_content{
+      padding-left: px2rem(20);
+      .circleTitle{
+        display: flex;
+        @include font-dpr(15px);
+        p{
+          line-height: px2rem(50);
+        }
+        span{
+          height:px2rem(32);
+          // display: inline;
+          margin-top: px2rem(9);
+          margin-left: px2rem(10);
+          border: 1px solid $walkcolor;
+          padding:px2rem(4);
+          border-radius: px2rem(6);
+          @include font-dpr(11px);
+          line-height: px2rem(22);
+          color:$walkcolor;
+        }
+      }
+      .describe{
+        width: px2rem(530);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        color: #666;
+      }
+      .personCount{
+        display: flex;
+        p{
+          margin-right: px2rem(20);
+          @include font-dpr(12px);
+          line-height: px2rem(42);
+          color: #666
+        }
+      }
+    }
+  }
+  .master{
+    display: flex;
+    position: relative;
+    padding: 0 px2rem(30);
+    background: #fff;
+    height: px2rem(72);
+    @include font-dpr(13px);
+    line-height: px2rem(72);
+    margin-top: 1px;
+    img{
+      width: px2rem(50);
+      height:px2rem(50);
+      border-radius: 50%;
+      margin-top: px2rem(11);
+    }
+    .quit{
+      position: absolute;
+      top:50%;
+      right: px2rem(30);
+      width: px2rem(80);
+      height:px2rem(40);
+      border-radius: px2rem(10);
+      background: $walkcolor;
+      text-align: center;
+      @include font-dpr(13px);
+      line-height: px2rem(40);
+      color: #fff;
+      margin-top: px2rem(-20);
+    }
+  }
+  .relevance{
+    li{
+      padding: px2rem(20) px2rem(30);
+      background: #fff;
+      margin: px2rem(20) 0;
+      .issuePerson{
+        display: flex;
+        justify-content: space-between;
+        .person{
+          display: flex;
+          img{
+            width: px2rem(50);
+            height:px2rem(50);
+            border-radius: 50%;
+            margin-right: px2rem(10);
+          }
+          p{
+            span{
+              display: block;
+              @include font-dpr(13px);
+              line-height: px2rem(30);
+              color:#666;
+            }
+          }
+        }
+        .count{
+          span{
+            display: inline-block;
+            padding-left:px2rem(30);
+            background: url('../img/active/read.png') no-repeat left center;
+            background-size: px2rem(26) px2rem(16);
+            @include font-dpr(11px);
+            line-height: px2rem(30);
+            color: #666;
+            &:last-child{
+              background: url('../img/active/comment_1.png') no-repeat left center;
+              background-size: px2rem(20) px2rem(18);
+              margin-left: px2rem(5);
+            }
+          }
+        }
+      }
+      .title{
+        padding:px2rem(15) 0 px2rem(20);
+        @include font-dpr(15px);
+        line-height: px2rem(40);
+      }
+      .reason{
+        display: -webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:3;
+        overflow: hidden;
+        @include font-dpr(12px);
+        line-height: px2rem(34);
+        color:#666;
+      }
+      .pics{
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: px2rem(15);
+        img{
+          width: px2rem(223);
+          height:px2rem(223);
+          border-radius: px2rm(10);
+          margin-right: px2rem(5);
+        }
+      }
+    }
+  }
+}

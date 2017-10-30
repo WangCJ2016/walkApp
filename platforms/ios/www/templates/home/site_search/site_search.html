@@ -1,0 +1,35 @@
+<ion-view hide-nav-bar='true'>
+    <ion-header-bar>
+      <div class="header">
+            <div class="wrap">
+              <div class="buttons">
+                 <button class="button button-clear lbtn_style" ng-click="goback()"></button>
+             </div>
+                <div class="search_btn sitesearch" ng-click="search()">
+                    <input type="text" placeholder="">
+                    <span></span>
+                </div>
+                <i></i>
+            </div>
+      </div>
+    </ion-header-bar>
+    <ion-content class='commonback'>
+      <div class='site_wrap'>
+        <h3>已选</h3>
+        <ul class='type_label'>
+          <li ng-repeat = 'checkedList in checkedList'>
+            <label for="" class='active'>{{checkedList.name}}</label>
+            <input type="checkbox" name="" value="">
+          </li>
+        </ul>
+        <h3>可添加多个标签</h3>
+        <ul class='type_label'>
+          <li ng-repeat = 'site_type in site_type' ng-click='checkClick($index,site_type.checked,site_type.id)'>
+            <label for="" ng-class='{active:site_type.checked}'>{{site_type.name}}</label>
+            <input type="checkbox" name="" value="" ng-model = 'site_type.checked'>
+          </li>
+        </ul>
+      </div>
+        <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

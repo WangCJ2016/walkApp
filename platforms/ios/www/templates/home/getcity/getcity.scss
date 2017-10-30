@@ -1,0 +1,56 @@
+.choosecity_warp{
+  .choosed{
+    width:100%;
+    margin-top: px2rem(30);
+    padding:0 px2rem(30);
+    @include font-dpr(14px);
+    color:#333;
+    p{
+      @include font-dpr(13px);
+      color:#999;
+      margin-bottom: px2rem(10);
+    }
+    .choosed_r{
+      display: flex;
+      flex-wrap: wrap;
+      span{
+        width:px2rem(200);
+        height:px2rem(70);
+        line-height:px2rem(70);
+        border-radius:px2rem(10);
+        border: 1px solid #ccc;
+        margin-right: px2rem(20);
+        margin-bottom: px2rem(20);
+        text-align: center;
+      }
+    }
+  }
+  ul{
+    background: #fff;
+    padding-left:px2rem(30);
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: px2rem(88);
+    li{
+      width: 100%;
+      height:px2rem(88);
+      border-bottom:1px solid #efefef;
+      display: flex;
+      justify-content: space-between;
+      padding-right: px2rem(30);
+      @include font-dpr(14px);
+      color:#333;
+      line-height:px2rem(88);
+      &:last-child{
+          border-bottom:none;
+      }
+      span{
+        display:block;
+        width:px2rem(20);
+        height:100%;
+        background:url('../img/mine/arrows.png') no-repeat left center;
+        background-size: 100% px2rem(30);
+      }
+    }
+  }
+}

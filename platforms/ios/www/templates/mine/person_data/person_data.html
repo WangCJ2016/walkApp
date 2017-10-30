@@ -1,0 +1,88 @@
+<ion-view hide-nav-bar='true'>
+    <ion-content class='commonback'>
+        <div class='personData_wrap'>
+            <div class="head_pic">
+                <img ng-src="{{userphoto || mysitelist[0].userPhoto}}" alt="">
+                <p>{{nickName || mysitelist[0].userNickname}}</p>
+                <div class="back" ng-click='goback()'></div>
+            </div>
+            <div class="active_ban">
+              <p ng-class="{active:siteShow}" ng-click='mysite()'>标注的地点</p>
+              <p ng-class="{active:postShow}" ng-click='mypost()'>帖子</p>
+              <p ng-class="{active:circleShow}" ng-click='mycircle()'>圈子</p>
+            </div>
+            <div class="site_list" ng-if='siteShow'>
+              <ul class='sort_list'>
+                <li ng-repeat = 'mysitelist in mysitelist' ng-click='todetail(mysitelist.id,mysitelist.star)'>
+                  <div class="list_pic">
+                    <img ng-src="{{mysitelist.pics[0]}}" alt="">
+                  </div>
+                  <div class="list_cont">
+                    <div class='list_title'>
+                      <h2>{{mysitelist.name}}</h2>
+                      <div rating-value="mysitelist.star" star class='star'></div>
+                    </div>
+                    <p><span>{{mysitelist.address}}</span></p>
+                    <!-- <i>约3.2km</i> -->
+                    <p>{{mysitelist.remark}}</p>
+                    <div class='list_type'>
+                      <span ng-repeat ='typeNames in mysitelist.typeNames'>{{typeNames}}</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <p class='noDataTips' ng-show = 'mysitelist.length <= 0'>亲，暂无数据哦</p>
+            </div>
+            <div class="post_list" ng-if='postShow'>
+              <ul class="relevance">
+                <li ng-repeat ='mypostlist in mypostlist' ng-click = 'topostdetail(mypostlist.id)'>
+                  <div class="issuePerson">
+                    <div class="person">
+                      <img ng-src="{{mypostlist.userPhoto}}" alt="">
+                      <p>
+                        <span>{{mypostlist.userNickname}}</span>
+                        <span>{{mypostlist.createTime}}</span>
+                      </p>
+                    </div>
+                    <p class='count'>
+                      <span>{{mypostlist.viewCount}}</span>
+                      <span>{{mypostlist.commentCount}}</span>
+                    </p>
+                  </div>
+                  <div class="title">{{mypostlist.title}}</div>
+                  <div class="reason">推荐理由：{{mypostlist.contents}}</div>
+                  <div class="pics">
+                    <img ng-repeat= 'pics in mypostlist.pics' ng-src="{{pics}}" alt="">
+                  </div>
+                </li>
+              </ul>
+              <p class='noDataTips' ng-show = 'mypostlist.length <= 0'>亲，暂无数据哦</p>
+            </div>
+            <div class="circle_list" ng-if='circleShow'>
+              <ul class="active_content">
+                <li class="column" ng-repeat='mycirclelist in mycirclelist' ng-click='tocircledetail(mycirclelist.ecologyCircle.id,1)'>
+                  <!-- <div class="person">
+                    <img ng-src="mycirclelist.ecologyCircle." alt="">
+                    <span>熊猫哔哔</span>
+                  </div> -->
+                  <p class='intro'>{{mycirclelist.ecologyCircle.name}}</p>
+                  <div class="pic">
+                    <img ng-repeat = 'pics in mycirclelist.pics' ng-src="{{pics}}" alt="">
+                    <!-- <img src="img/home/123.jpg" alt="">
+                    <img src="img/home/123.jpg" alt=""> -->
+                  </div>
+                  <div class="about">
+                    <!-- <p>来自于:<em>深夜食堂</em></p> -->
+                    <span>{{mycirclelist.ecologyCircle.createTime}}</span>
+                    <i>{{mycirclelist.ecologyCircle.userCount}}</i>
+                    <i>{{mycirclelist.ecologyCircle.postCount}}</i>
+                  </div>
+                </li>
+              </ul>
+              <p class='noDataTips' ng-show = 'mycirclelist.length <= 0'>亲，暂无数据哦</p>
+            </div>
+        </div>
+        <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+        <ion-infinite-scroll ng-if="hasmore1" on-infinite="loadMorePost()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

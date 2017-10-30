@@ -1,0 +1,18 @@
+<ion-view hide-nav-bar='true'>
+    <ion-content class='commonback'>
+        <div class='mine_wrap'>
+            <div class="head_pic">
+                <img ng-src="{{userpic}}" alt="" ng-click='mydatabtn()'>
+                <p>{{username}}</p>
+            </div>
+            <ul class='mine_data'>
+              <li ng-click='mydatabtn()'><p><img src="img/mine/personal.png" alt="">个人资料</p><i></i></li>
+              <li ng-click="goLogin('chatlist')"><p><img src="img/mine/news.png" alt="">我的消息</p><span ng-if='count>0' class='chatcount'>{{count}}</span><i></i></li>
+              <li ng-click='goMineIssue()'><p><img src="img/mine/founding.png" alt="">我发起的</p><i></i></li>
+              <li ui-sref='changepwd'><p><img src="img/mine/password.png" alt="">修改登录密码</p><i></i></li>
+              <li class='version' ng-click='Version()'><p><img src="img/mine/versions.png" alt="">版本:V1.0</p><i></i></li>
+            </ul>
+            <div class='Logout' ng-class='{active:isclick}' ng-click='minebtn()'>{{btncont}}</div>
+        </div>
+    </ion-content>
+</ion-view>

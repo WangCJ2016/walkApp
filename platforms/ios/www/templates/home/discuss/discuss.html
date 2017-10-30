@@ -1,0 +1,15 @@
+<ion-view title='评价'>
+  <ion-nav-buttons side="left">
+        <button class="button button-clear leftbtn" ng-click="goback()"></button>
+    </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+      <button class="button button-clear applybtn" ng-click="submitdiscuss({{ratingVal}})">发布</button>
+  </ion-nav-buttons>
+    <ion-content class=''>
+        <div class='discuss_wrap'>
+            <p>综合评价</p>
+            <div rating-value="ratingVal" starcheck class='star'></div>
+            <textarea name="name" ng-model='comment.content' placeholder="环境如何？服务是否周到？设施如何？"></textarea>
+        </div>
+    </ion-content>
+</ion-view>

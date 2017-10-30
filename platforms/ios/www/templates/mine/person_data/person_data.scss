@@ -1,0 +1,57 @@
+.personData_wrap{
+  .head_pic{
+    width: 100%;
+    height:px2rem(340);
+    background: #494949;
+    text-align: center;
+    padding-top:px2rem(100);
+    position: relative;
+    img{
+      width:px2rem(140);
+      height:px2rem(140);
+      border-radius: 50%;
+    }
+    p{
+      color:#fff;
+      @include font-dpr(14px);
+      line-height: px2rem(48);
+    }
+    .back{
+      width: px2rem(50);
+      height:px2rem(50);
+      background: url('../img/home/back.png');
+      background-size: 100% 100%;
+      position: absolute;
+      top:px2rem(30);
+      left: px2rem(30);
+    }
+  }
+  .active_ban{
+    display: flex;
+    width: 100%;
+    height:px2rem(80);
+    background: #fff;
+    padding: 0 px2rem(30);
+    @include font-dpr(15px);
+    line-height: px2rem(80);
+    color:#333;
+    margin-bottom: px2rem(20);
+    p{
+      margin-right: px2rem(100);
+      &.active{
+        color:$walkcolor;
+        position: relative;
+        &:after{
+          content: '';
+          width: px2rem(160);
+          height:px2rem(6);
+          background: $walkcolor;
+          position: absolute;
+          bottom: -1px;
+          left:50%;
+          margin-left: px2rem(-80);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+<ion-view hide-nav-bar='true'>
+  <ion-header-bar>
+    <div class="clubheader">
+          <div class="wrap">
+              <div class="club_title">生态圈</div>
+          </div>
+    </div>
+  </ion-header-bar>
+  <div class="bar bar-subheader active_ban">
+    <p ng-class="{active:$index==i}" ng-repeat = 'banCont in banCont' ng-click = 'banclick($index)'>{{banCont}}</p>
+  </div>
+    <ion-content class='commonback'>
+        <div class="active_wrap">
+          <div class="" id='map' style='width:0px;height:0px;'></div>
+          <!-- 帖子 -->
+          <ul class="active_content" ng-if='postShow'>
+            <li class="column" ng-repeat ='postlist in postlist' ng-click='topostdetail(postlist.id)'>
+              <p class='intro'>{{postlist.title}}</p>
+              <div class="person">
+                <img ng-src="{{postlist.userPhoto}}" alt="">
+                <span>{{postlist.userNickname}}</span>
+              </div>
+              <div class="pic">
+                <img ng-repeat='pic in postlist.pics' ng-src="{{pic}}" alt="">
+              </div>
+              <div class="about">
+                <p>来自于:<em>{{postlist.circleName}}</em></p>
+                <span>{{postlist.createTime}}</span>
+                <i>{{postlist.commentCount}}</i>
+                <i>{{postlist.viewCount}}</i>
+              </div>
+            </li>
+            <p class='noDataTips' ng-show = 'postlist.length <= 0'>亲，暂无数据哦</p>
+          </ul>
+          <div class="active_circle" ng-if='circleShow'>
+            <div class="circle_title">
+              <p>我的圈子</p>
+              <div>
+                <span ui-sref='take_part'>加圈</span><span ui-sref='newActive'>建圈</span>
+              </div>
+            </div>
+            <ul class='circle_list'>
+              <li ng-repeat='mycircleList in mycircleList' ng-click='tocircledetail(mycircleList.ecologyCircle.id,1)'>
+                <img ng-src="{{mycircleList.ecologyCircle.photo}}" class='pic' alt="">
+                <div class="circle_content">
+                  <div class="circleTitle">
+                    <p>{{mycircleList.ecologyCircle.name}}</p>
+                    <img ng-src="img/active/louzhu.png" alt="" ng-if='mycircleList.ecologyCircle.userId == userdata.userId'>
+                    <span>{{mycircleList.ecologyCircle.appTypeName}}</span>
+                  </div>
+                  <div class="personCount">
+                    <p>帖子：{{mycircleList.ecologyCircle.postCount}}</p>
+                    <p>成员：{{mycircleList.ecologyCircle.userCount}}</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="circle_title">
+              <p>可能感兴趣</p>
+              <div>
+                <span class='change' ng-click='changeNext()'>换一组</span>
+              </div>
+            </div>
+            <ul class='circle_list'>
+              <li ng-repeat='randcircleList in randcircleList' ng-click='tocircledetail(randcircleList.id,0)'>
+                <img ng-src="{{randcircleList.photo}}" class='pic' alt="">
+                <div class="circle_content">
+                  <div class="circleTitle">
+                    <p>{{randcircleList.name}}</p>
+                    <span>{{randcircleList.appTypeName}}</span>
+                  </div>
+                  <div class="personCount">
+                    <p>帖子：{{randcircleList.postCount}}</p>
+                    <p>成员：{{randcircleList.userCount}}</p>
+                  </div>
+                </div>
+                <div class="join" ng-click='Joincircle(randcircleList.id,$index,$event)'>加入</div>
+              </li>
+            </ul>
+          </div>
+        <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

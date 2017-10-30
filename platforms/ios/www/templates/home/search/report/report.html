@@ -1,0 +1,18 @@
+<ion-view title='举报'>
+  <ion-nav-buttons side="left">
+        <button class="button button-clear leftbtn" ng-click="goback()"></button>
+    </ion-nav-buttons>
+    <ion-content class='commonback'>
+        <div class='report_wrap'>
+          <h2>请选择举报原因</h2>
+          <div class="report_cont">
+            <p ng-class='{active:i == $index}' ng-repeat='reportCont in reportCont' ng-click = 'reportClick($index)'>{{reportCont}}</p>
+            <p ng-click='lastClick()'>
+              其他问题，我要吐槽
+              <textarea name="name" ng-model='content.cont'></textarea>
+            </p>
+          </div>
+          <div class="completeBtn" ng-click='completeClick()'>完成</div>
+        </div>
+    </ion-content>
+</ion-view>

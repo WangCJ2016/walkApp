@@ -1,0 +1,15 @@
+<ion-view title='切换城市'>
+    <ion-nav-buttons side="left">
+          <button class="button button-clear leftbtn" ng-click='goback()'></button>
+    </ion-nav-buttons>
+    <ion-content  class='commonback'>
+      <div class="choosecity_warp has-footer">
+        <ul>
+          <li ng-repeat='cityArr in cityArr' ng-click='cityChoose(cityArr.id,cityArr.name)'>
+            <p>{{cityArr.name}}</p>
+            <i ng-hide='ischange == 1 || cityArr.siteCount == 0'>{{cityArr.siteCount}}</i>
+          </li>
+        </ul>
+      </div>
+    </ion-content>
+</ion-view>

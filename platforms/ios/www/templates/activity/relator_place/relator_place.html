@@ -1,0 +1,60 @@
+<ion-view hide-nav-bar='true'>
+    <ion-header-bar>
+      <div class="header">
+            <div class="wrap">
+              <div class="buttons">
+                 <button class="button button-clear lbtn_style" ng-click="goback()"></button>
+             </div>
+                <div class="search_btn search" ng-click="search()">
+                    <i>杭州市</i>
+                    <input type="text" placeholder="">
+                    <span></span>
+                </div>
+                <i></i>
+            </div>
+      </div>
+    </ion-header-bar>
+    <ion-content class='commonback'>
+        <div class='relator_place_wrap'>
+            <div class='maps'></div>
+            <h3>相关联地点</h3>
+            <ul class='sort_list'>
+              <li>
+                <div class="list_pic">
+                  <img src="img/home/123.jpg" alt="">
+                </div>
+                <div class="list_cont">
+                  <div class='list_title'>
+                    <h2>仙林生态山庄</h2>
+                    <div rating-value="4" star class='star'></div>
+                  </div>
+                  <p><span>余杭区闲林中路234号</span><i>约3.2km</i></p>
+                  <p>山清水秀，风景优美</p>
+                  <div class='list_type'>
+                    <span>亲子</span>
+                    <span>漂流</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="list_pic">
+                  <img src="img/home/123.jpg" alt="">
+                </div>
+                <div class="list_cont">
+                  <div class='list_title'>
+                    <h2>杭州西湖度假村</h2>
+                    <div rating-value="4" star class='star'></div>
+                  </div>
+                  <p><span>余杭区闲林中路234号</span><i>约3.2km</i></p>
+                  <p>山清水秀，风景优美</p>
+                  <div class='list_type'>
+                    <span>亲子</span>
+                    <span>漂流</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+        </div>
+        <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

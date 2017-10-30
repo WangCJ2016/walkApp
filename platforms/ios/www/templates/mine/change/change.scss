@@ -1,0 +1,67 @@
+.changename_warp{
+  .change{
+    width:100%;
+    height:px2rem(105);
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    margin-top:px2rem(30);
+    padding: 0 px2rem(30);
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    p{
+      @include font-dpr(14px);
+      color:#333;
+      line-height:px2rem(105);
+    }
+    input{
+      width:px2rem(640);
+      height:100%;
+      @include font-dpr(14px);
+      color:#333;
+    }
+    span{
+      width:px2rem(44);
+      height:100%;
+      background: url('../img/mine/cancel.png') no-repeat left center;
+      background-size: 100% px2rem(44);
+    }
+  }
+  i{
+    display: block;
+    text-indent: px2rem(30);
+    @include font-dpr(14px);
+    color:#999;
+    line-height:px2rem(68);
+  }
+}
+.changesex_warp{
+  padding-top:px2rem(30);
+  .change{
+    margin-top:0;
+    padding-right: 0;
+    &:first-child{
+      border-bottom: none;
+    }
+    &:last-child{
+      border-top: none;
+    }
+    .sex{
+      width: 100%;
+      border-bottom: 1px solid #dbdbdb;
+      padding-right: px2rem(30);
+      display: flex;
+      justify-content: space-between;
+      &.noborder{
+        border:none;
+      }
+      i{
+        display: block;
+        width: px2rem(30);
+        height:100%;
+        background: url('../img/mine/right.png') no-repeat right center;
+        background-size: 100% px2rem(21);
+      }
+    }
+  }
+}

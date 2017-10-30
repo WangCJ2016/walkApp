@@ -1,0 +1,91 @@
+.mine_wrap{
+  width: 100%;
+  padding-bottom:px2rem(88);
+  .head_pic{
+    width: 100%;
+    height:px2rem(340);
+    background: $walkcolor;
+    text-align: center;
+    padding-top:px2rem(100);
+    img{
+      width:px2rem(140);
+      height:px2rem(140);
+      border-radius: 50%;
+    }
+    p{
+      color:#fff;
+      @include font-dpr(14px);
+      line-height: px2rem(48);
+      img.level{
+        width: auto;
+        height: px2rem(48);
+        vertical-align: text-bottom;
+        margin-left: px2rem(15);
+      }
+    }
+  }
+  .mine_data{
+    margin-top:1px;
+    li{
+      margin-bottom:1px;
+      padding: 0 px2rem(30);
+      background:#fff ;
+      color:#333;
+      display: flex;
+      justify-content: space-between;
+      height: px2rem(80);
+      @include font-dpr(16px);
+      line-height: px2rem(80);
+      font-family: 'MicrosoftYaHei';
+      position: relative;
+      p{
+        display: flex;
+        img{
+          width: px2rem(40);
+          height:px2rem(40);
+          margin-top:px2rem(20);
+          margin-right: px2rem(30);
+        }
+      }
+      i{
+        display: block;
+        width: px2rem(15);
+        height:100%;
+        background: url('../img/mine/arrows.png') no-repeat left center;
+        background-size: 100% px2rem(24);
+        margin-left: px2rem(20);
+      }
+      &.version{
+          margin-top:px2rem(20);
+      }
+    }
+  }
+  .Logout{
+    width:px2rem(600);
+    height:px2rem(80);
+    background: #fff;
+    margin:px2rem(80) auto;
+    //border-radius: px2rem(40);
+    text-align: center;
+    @include font-dpr(16px);
+    line-height: px2rem(80);
+    &.active{
+      background: $walkcolor;
+      color:#fff;
+    }
+  }
+}
+.chatcount{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    background: #ff0000;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 25px;
+    margin-top: -12px;
+    position: absolute;
+    top:50%;
+    right:px2rem(60);
+}

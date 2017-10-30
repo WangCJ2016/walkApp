@@ -1,0 +1,120 @@
+<ion-view hide-nav-bar='true'>
+    <div class='fixed' id='fixed' ng-hide = 'scrollTops < 10'>
+      <span ng-click='goback($event)'></span>
+      生态点点
+    </div>
+    <ion-content ng-click='notshow()' on-scroll='swipe()' class='commonback'>
+        <div class='detail_wrap'>
+            <div class="headepic" ng-click='tomorepic()'>
+              <img ng-src="{{siteDate.pictures.split(',')[0]}}" alt="">
+               <div class="back_bar">
+                   <div class="back_btn" ng-click='goback($event)'></div>
+                   <div class="btns">
+                     <div class="share_btn" ng-if = 'isMine == false' ng-click='sharecircle($event,siteDate.name,siteDate.pictures.split(",")[0])'></div>
+                     <div class="edit_btn" ng-if = 'isMine' ng-click='goupdata($event,siteDate.userId)'></div>
+                      <div class="detele_btn" ng-if = 'isMine' ng-click='delete($event,siteDate.userId)'></div>
+                   </div>
+               </div>
+               <div class="picCount">{{siteDate.pictureCount}}张</div>
+             </div>
+            <div class='mapdiv'>
+              <div class="map" id='maps' ng-click = 'gomap(siteDate.lng,siteDate.lat,siteDate.address,siteDate.name)'></div>
+               <div class="site">{{siteDate.address}}</div>
+             </div>
+            <div class="detail_cont">
+               <p class='title'>{{siteDate.name}}<span ng-click = 'report()'>举报</span></p>
+               <p class='describe'>{{siteDate.remark}}</p>
+               <div class="details">
+                 <span >特色标签</span>
+                 <em ng-repeat = 'typeNames in siteDate.typeNames'>{{typeNames}}</em>
+                  <p class='first' ng-click='gotip(siteDate.typeNames)'></p>
+               </div>
+               <div class="details">
+                 <span>发布人&nbsp;</span>
+                 <img ng-src="{{siteDate.userPhoto}}" alt="">
+                 <i>{{siteDate.userNickname}}</i>
+                 <p ng-click='go(siteDate.userId)'></p>
+               </div>
+               <div class="details">
+                 <span>电话</span>
+                 <i>{{siteDate.merchantPhone}}</i>
+               </div>
+             </div>
+            <div class="about">
+              <div class='about_title' ng-show = 'circleList.length > 0' ng-click = 'goAboutPost()'>
+                <p>相关帖子</p>
+                <span></span>
+              </div>
+            </div>
+            <ul class="active_content">
+              <li class="column" ng-repeat = 'circleList in circleList' ng-click='topostdetail(circleList.id)'>
+                <p class='intro'>{{circleList.title}}</p>
+                <div class="person">
+                  <img ng-src="{{circleList.userPhoto}}" alt="">
+                  <span>{{circleList.userNickname}}</span>
+                </div>
+                <div class="pic">
+                  <img ng-repeat = 'pic in circleList.pics' ng-src="{{pic}}" alt="">
+                </div>
+                <div class="about">
+                  <p>来自于:<em>{{circleList.circleName}}</em></p>
+                  <span>{{circleList.createTime}}</span>
+                  <i>{{circleList.commentCount}}</i>
+                  <i>{{circleList.viewCount}}</i>
+                </div>
+              </li>
+            </ul>
+            <div class="about" ng-click='godiscuss_list()'>
+              <div class='about_title'>
+                <p>用户评价（{{siteDate.commentCount}}）</p>
+                <span></span>
+              </div>
+              <div class="evaluate">
+                <p>{{rating}}.0</p>
+                <div class='star_evaluate'>
+                  <span>综合评价</span>
+                  <div rating-value="rating" star class='star'></div>
+                </div>
+              </div>
+            </div>
+            <div class="site_comments" ng-repeat ='commentList in commentList'>
+              <div class="person_data">
+                <div class="person">
+                  <img ng-src="{{commentList.userPhoto}}" alt="">
+                  <div class="nameStar">
+                    <span>{{commentList.userNickname}}</span>
+                    <div rating-value="commentList.star" star class='star'></div>
+                  </div>
+                </div>
+                <div class='date'>{{commentList.createTime}}</div>
+              </div>
+              <p class='eval_cont'>{{commentList.contents}}</p>
+            </div>
+            <div class="about">
+              <div class='about_title'>
+                <p>附近点推荐</p>
+                <!-- <span></span> -->
+              </div>
+            </div>
+            <ul class='sort_list'>
+              <li ng-repeat ='nearBysiteList in nearBysiteList' ng-click='todetail(nearBysiteList.id,nearBysiteList.star)'>
+                <div class="list_pic">
+                  <img ng-src="{{nearBysiteList.pic}}" alt="">
+                </div>
+                <div class="list_cont">
+                  <div class='list_title'>
+                    <h2>{{nearBysiteList.name}}</h2>
+                    <div rating-value="nearBysiteList.star" star class='star'></div>
+                  </div>
+                  <p><span>{{nearBysiteList.address}}</span><i>约{{nearBysiteList.scope}}</i></p>
+                  <p>{{nearBysiteList.remark}}</p>
+                  <div class='list_type'>
+                    <span ng-repeat = 'typeNames in nearBysiteList.typeNames'>{{typeNames}}</span>
+                    <!-- <span>漂流</span> -->
+                  </div>
+                </div>
+              </li>
+            </ul>
+        </div>
+    </ion-content>
+</ion-view>

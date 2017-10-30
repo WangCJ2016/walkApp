@@ -1,0 +1,25 @@
+<ion-view title='用户评价'>
+  <ion-nav-buttons side="left">
+      <button class="button button-clear leftbtn" ng-click="goback()"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+      <button class="button button-clear rightbtn edit" ng-click="godiscuss(discusslist)"></button>
+  </ion-nav-buttons>
+    <ion-content class='commonback'>
+      <div class="site_comments" ng-repeat = 'discusslist in discusslist'>
+        <div class="person_data">
+          <div class="person">
+            <img ng-src="{{discusslist.userPhoto}}" alt="">
+            <div class="nameStar">
+              <span>{{discusslist.userNickname}}</span>
+              <div rating-value="discusslist.star" star class='star'></div>
+            </div>
+          </div>
+          <div class='date'>{{discusslist.createTime}}</div>
+        </div>
+        <p class='eval_cont'>{{discusslist.contents}}</p>
+      </div>
+      <p class='noDataTips' ng-show = 'discusslist.length <= 0'>暂无评论，您可以点击右上角添加</p>
+      <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

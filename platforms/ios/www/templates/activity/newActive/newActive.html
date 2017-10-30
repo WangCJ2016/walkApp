@@ -1,0 +1,31 @@
+<ion-view title='创建兴趣圈'>
+    <ion-nav-buttons side="left">
+          <button class="button button-clear leftbtn" ng-click="goback()"></button>
+    </ion-nav-buttons>
+    <ion-content class='commonback'>
+        <div class='newactive_wrap'>
+          <div class="set_photo">
+            <p ng-hide ='sendpic!=""'></p>
+            <img src="{{sendpic}}" ng-hide ='sendpic == ""'  alt="">
+            <span ng-click='filepic()'>[设置头像]</span>
+          </div>
+          <div class="circleCont">
+            <div>
+              <label for="">圈子名称</label>
+              <input type="text" name="" value="" placeholder="填写圈名称（2~12个字）" ng-model='fromdata.activename'>
+            </div>
+            <div>
+              <label for="">圈子介绍</label>
+              <textarea name="name"  placeholder='填写圈子介绍，让大家了解你的圈子' ng-model='fromdata.activecontent'></textarea>
+            </div>
+            <div>
+              <label for="">圈子类别</label>
+              <p>
+                <span ng-class='{active:$index == i}' ng-repeat = 'typeList in typeList' ng-click='chooseType($index,typeList.id)'>{{typeList.name}}</span>
+              </p>
+            </div>
+          </div>
+          <div class='newactivebtn' ng-click='submitbtn()'>完 成</div>
+        </div>
+    </ion-content>
+</ion-view>

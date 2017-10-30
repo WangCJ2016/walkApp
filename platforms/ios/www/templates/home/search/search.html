@@ -1,0 +1,36 @@
+<ion-view title='搜 索'>
+    <ion-nav-buttons side="left">
+          <button class="button button-clear leftbtn" ng-click='goback()'></button>
+      </ion-nav-buttons>
+    <ion-content class='commonback'>
+      <div class="search_wrap">
+            <div class="home_search">
+                <input type="text" placeholder="根据关键字搜索" value="" ng-change="search(search_con)" ng-model="search_con" >
+                <span></span>
+            </div>
+            <div class="home_search_list">
+            <!-- 活动搜索 -->
+                <ul class='sort_list'>
+                  <li  ng-repeat='item in searchResult' ng-click='todetail(item.id,item.star)'>
+                    <div class="list_pic">
+                      <img ng-src="{{item.pictures.split(',')[0]}}" alt="">
+                    </div>
+                    <div class="list_cont">
+                      <div class='list_title'>
+                        <h2>{{item.name}}</h2>
+                        <div rating-value="item.star" star class='star'></div>
+                      </div>
+                      <p><span>{{item.address}}</span><i>约3.2km</i></p>
+                      <p>{{item.remark}}</p>
+                      <div class='list_type' >
+                        <span ng-repeat='type in item.typeNames'>{{type}}</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <p class="no-result" ng-if='noResult'>没有搜索结果哟</p>
+          </div>
+      </div>
+        <ion-infinite-scroll ng-if="hasmore" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

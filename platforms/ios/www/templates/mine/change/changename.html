@@ -1,0 +1,16 @@
+<ion-view title='昵称'>
+    <ion-nav-buttons side="left">
+          <button class="button button-clear leftbtn" ui-sref='mydata'></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-clear applybtn" ng-click="changeName()">完成</button>
+    </ion-nav-buttons>
+    <ion-content  class='commonback has-footer'>
+      <div class="changename_warp">
+          <div class="change">
+              <input type="text" name="" value="nowdata.username" ng-model ='nowdata.username' placeholder="请输入您的昵称">
+              <span></span>
+          </div>
+      </div>
+    </ion-content>
+</ion-view>

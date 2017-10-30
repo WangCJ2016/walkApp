@@ -1,0 +1,22 @@
+<ion-view title='快速注册'>
+    <ion-nav-buttons side="left">
+          <button class="button button-clear leftbtn" ui-sref="register"></button>
+    </ion-nav-buttons>
+    <ion-content class='commonback'>
+        <div class='register_wrap'>
+          <p>
+            <label for="username">昵&nbsp;&nbsp;称:</label>
+            <input type="text" placeholder="请输入昵称" id='username' ng-model='sendData.nickname' required>
+          </p>
+          <p>
+            <label for="pwd">密&nbsp;&nbsp;码:</label>
+            <input type="password" placeholder="请输入密码" id='pwd' ng-model='sendpwd.password' ng-pattern='/[a-zA-Z\d+]{6,36}/' required>
+          </p>
+          <p>
+            <label for="nextpwd">确认密码:</label>
+            <input type="password" id='nextpwd' ng-model='sendpwd.queren'  placeholder="请再次输入密码">
+          </p>
+          <div class="register_btn" ng-click='reg()'>完成</div>
+        </div>
+    </ion-content>
+</ion-view>

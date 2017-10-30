@@ -1,0 +1,112 @@
+.loginback{
+  height:100% !important;
+  background: url('../img/mine/login/back.png');
+  background-size: 100% 100%;
+}
+.login_wrap{
+  padding-top:px2rem(258);
+  .logo{
+    width:px2rem(218);
+    height:px2rem(218);
+    margin:0 auto;
+    margin-bottom:px2rem(114);
+    background: url('../img/mine/login/logo.png');
+    background-size: 100% 100%;
+  }
+  .login_input{
+    padding-bottom:px2rem(10);
+    //padding-top:px2rem(200);
+    p{
+      width: px2rem(544);
+      height:px2rem(88);
+      border-radius: px2rem(44);
+      border:1px solid #f1f1f1;
+      margin:0 auto;
+      margin-bottom:px2rem(30);
+      display: flex;
+      padding-left:px2rem(40);
+      label{
+        @include font-dpr(14px);
+        line-height: px2rem(88);
+        color:#e6e6e6;
+        margin-right: px2rem(20);
+      }
+      input{
+        width: px2rem(380);
+        height:100%;
+        background: none;
+        @include font-dpr(14px);
+        color:#e6e6e6;
+      }
+    }
+  }
+  .login_btn{
+    width: px2rem(544);
+    height:px2rem(88);
+    border-radius: px2rem(44);
+    background: $walkcolor;
+    margin:0 auto;
+    @include font-dpr(14px);
+    line-height: px2rem(88);
+    color:#fff;
+    text-align: center;
+    font-weight: bold;
+  }
+  .forget_pwd{
+    text-align: center;
+    color:#ccc;
+    @include font-dpr(11px);
+    line-height: px2rem(82);
+    a{
+      color:#ccc;
+    }
+  }
+  .thirdparty{
+    margin-top: px2rem(30);
+    color:#b3b3b3;
+    p{
+      width: px2rem(504);
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      &:before{
+        content:"";
+        display: block;
+        width: px2rem(168);
+        height:px2rem(2);
+        background:#b3b3b3;
+        position: absolute;
+        top:50%;
+      }
+      &:after{
+        content:"";
+        display: block;
+        width: px2rem(168);
+        height:px2rem(2);
+        background:#b3b3b3;
+        position: absolute;
+        top:50%;
+        right:0;
+      }
+    }
+    span{
+      display: block;
+      margin:0 auto;
+      margin-top:px2rem(40);
+      width: px2rem(60);
+      height:px2rem(40);
+      background: url('../img/mine/login/wx.png');
+      background-size: 100% 100%;
+
+    }
+  }
+}
+.close{
+  width:px2rem(30);
+  height:px2rem(30);
+  background: url('../img/mine/login/ss.png') no-repeat;
+  background-size: 100% 100%;
+  position: fixed;
+  top:px2rem(20);
+  right:px2rem(20);
+}

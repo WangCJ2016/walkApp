@@ -1,0 +1,67 @@
+<ion-view hide-nav-bar='true'>
+    <ion-header-bar>
+      <div class="header ">
+            <div class="wrap">
+                <div class='getcity' ui-sref='getcity'>
+                    <span href="javaScript:;">{{city}}<i></i></span>
+                </div>
+                <div class="search_btn" ng-click="search()">
+                    <!-- 根据活动名称搜索 -->
+                    <i></i>
+                    <span></span>
+                </div>
+                <div class='issue' ng-click='goLogin("issue_new")'>
+                    <span>我要发</span>
+                </div>
+            </div>
+      </div>
+    </ion-header-bar>
+    <ion-content ng-click='notshow()' class='commonback'>
+      <div class="home_wrap">
+        <div class="" id='map' style='width:0px;height:0px;'></div>
+        <!-- 头部轮播广告位 -->
+          <div class="home_pic">
+            <ion-slide-box class='slide' auto-play="true"  slide-interval=2000>
+              <ion-slide>
+                  <div class="box"><img src='img/home/pic.png'></div>
+              </ion-slide>
+              <ion-slide>
+                  <div class="box"><img src='img/home/pic.png'></div>
+              </ion-slide>
+            </ion-slide-box>
+          </div>
+          <!-- 分类 -->
+          <div class='home_classify'>
+            <div class='position' ng-click='goAllList()'>生态地点</div>
+            <ul>
+              <li ng-repeat='typeList in typeList' ng-click='goList(typeList.id,typeList.name)'>{{typeList.name}}</li>
+            </ul>
+          </div>
+          <!-- 列表 -->
+          <div class='hot'>
+            <div class='hot_nav'>
+              <p ng-class='{active:$index == i}' ng-repeat='homeBan in homeBan' ng-click='homeBanclick($index)'>{{homeBan}}</p>
+            </div>
+            <ul class='sort_list'>
+              <li ng-repeat = 'hotlist in hotlist' ng-click='todetail(hotlist.id,hotlist.star)'>
+                <div class="list_pic">
+                  <img ng-src="{{hotlist.pic}}" alt="">
+                </div>
+                <div class="list_cont">
+                  <div class='list_title'>
+                    <h2>{{hotlist.name}}</h2>
+                    <div rating-value="hotlist.star" star class='star'></div>
+                  </div>
+                  <p><span>{{hotlist.address}}</span><i>约{{hotlist.scope}}</i></p>
+                  <p>{{hotlist.remark}}</p>
+                  <div class='list_type' >
+                    <span ng-repeat='type in hotlist.typeNames'>{{type}}</span>
+                  </div>
+                </div>
+              </li>
+              <p class='noDataTips' ng-show = 'hotlist.length <= 0'>亲，暂无数据哦</p>
+            </ul>
+          </div>
+        </div>
+    </ion-content>
+</ion-view>

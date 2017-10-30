@@ -1,0 +1,42 @@
+.attention_wrap{
+  .list_cont{
+      width: 100%;
+      height: px2rem(140);
+      padding:0  px2rem(30);
+      border:none;
+      display: flex;
+      background: #fff;
+      justify-content: space-between;
+      margin-bottom: 1px;
+      .person_data{
+        padding: 0;
+        display: flex;
+        padding-top:px2rem(20);
+        img{
+          width:px2rem(100);
+          height:px2rem(100);
+          border-radius: 50%;
+          margin-right: px2rem(10);
+        }
+        span{
+          display: block;
+          @include font-dpr(14px);
+          line-height: px2rem(48);
+          color:#333;
+        }
+        i{
+          @include font-dpr(11px);
+          line-height: px2rem(44);
+          color:#999;
+        }
+      }
+      .btn{
+        span{
+          @include font-dpr(13px);
+          line-height: px2rem(140);
+          color:#333;
+          margin-left: px2rem(30);
+        }
+      }
+  }
+}

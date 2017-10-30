@@ -1,0 +1,82 @@
+.newactive_wrap{
+  .set_photo{
+    padding-top: px2rem(80);
+    text-align: center;
+    p{
+      width: px2rem(250);
+      height:  px2rem(250);
+      border:1px dashed #999;
+      margin:0 auto;
+    }
+    img{
+      width: px2rem(250);
+      height:  px2rem(250);
+      margin:0 auto;
+    }
+    span{
+      display: block;
+      margin-top: px2rem(40);
+      @include font-dpr(12px);
+      line-height: px2rem(28);
+      color: #999;
+    }
+  }
+  .circleCont{
+    margin-top:px2rem(80);
+    div{
+      padding:0 px2rem(30);
+      //background: #fff;
+      border-bottom:1px solid #dbdbdb;
+      label{
+        @include font-dpr(15px);
+        line-height: px2rem(70);
+      }
+      input{
+        width: 80%;
+        height:93%;
+        background: none;
+        padding-left: px2rem(20);
+      }
+      textarea{
+        width: 100%;
+        height: px2rem(200);
+        background: none;
+        resize: none;
+      }
+      p{
+        display: flex;
+        padding-bottom: px2rem(30);
+        span{
+          display: block;
+          @include font-dpr(13px);
+          line-height: px2rem(54);
+          padding:0 px2rem(30);
+          border: 1px solid #ccc;
+          margin-right: px2rem(30);
+          border-radius: px2rem(10);
+          &.active{
+            background: $walkcolor;
+            color: #fff;
+            border-color: $walkcolor;
+          }
+        }
+      }
+      &:first-child{
+        display: flex;
+        height:px2rem(70);
+      }
+    }
+  }
+  .newactivebtn{
+    width:px2rem(690);
+    height:px2rem(70);
+    background: $walkcolor;
+    border-radius: px2rem(10);
+    text-align: center;
+    line-height:px2rem(70);
+    @include font-dpr(15px);
+    color:#fff;
+    margin: 0 auto;
+    margin-top: px2rem(80);
+  }
+}

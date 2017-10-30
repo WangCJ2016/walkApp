@@ -1,0 +1,87 @@
+.takePart_wrap{
+  .join_ban{
+    width:px2rem(170);
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    background:#f0efed;
+    @include font-dpr(13px);
+    line-height: px2rem(80);
+    text-align: center;
+    z-index: 1000;
+    p{
+      border-bottom: 1px solid #dbdbdb;
+      &.active{
+        background: #fff;
+        color: $walkcolor;
+      }
+    }
+  }
+  .circle_list{
+    padding-left: px2rem(170);
+    li{
+      padding:px2rem(20) px2rem(30);
+      background: #fff;
+      position: relative;
+      display: flex;
+      .pic{
+        width: px2rem(100);
+        height:px2rem(100);
+        border-radius: px2rem(10);
+      }
+      .circle_content{
+        padding-left: px2rem(20);
+        .circleTitle{
+          display: flex;
+          @include font-dpr(15px);
+          p{
+            line-height: px2rem(70);
+          }
+          img{
+            width: px2rem(60);
+            height:px2rem(30);
+            margin-top: px2rem(18);
+            margin-left: px2rem(10);
+          }
+          span{
+            height:px2rem(32);
+            // display: inline;
+            margin-top: px2rem(18);
+            margin-left: px2rem(10);
+            border: 1px solid $walkcolor;
+            padding:px2rem(4);
+            border-radius: px2rem(6);
+            @include font-dpr(11px);
+            line-height: px2rem(22);
+            color:$walkcolor;
+          }
+        }
+        .personCount{
+          display: flex;
+          p{
+            margin-right: px2rem(20);
+            @include font-dpr(12px);
+            line-height: px2rem(28);
+            color: #666
+          }
+        }
+      }
+      .join{
+        position: absolute;
+        right:px2rem(30);
+        top:50%;
+        margin-top: px2rem(-23);
+        width: px2rem(94);
+        height:px2rem(46);
+        background: $walkcolor;
+        @include font-dpr(13px);
+        line-height: px2rem(46);
+        color:#fff;
+        text-align: center;
+        border-radius: px2rem(10);
+        font-family: 'MicrosoftYaHei';
+      }
+    }
+  }
+}
